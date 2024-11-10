@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Contexts;
 
 namespace login
 {
@@ -12,7 +13,7 @@ namespace login
         // Private constructor
         private DBconnection()
         {
-            DBconnectionString = Properties.Settings.Default.DBcoonectionString; // Initialize the connection string
+            DBconnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\pinterst\\login\\Login.mdf; Integrated Security = True; Connect Timeout = 30"; // Initialize the connection string
         }
 
         // Method to get the singleton instance of DBconnection

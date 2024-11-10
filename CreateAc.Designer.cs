@@ -35,11 +35,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FirstName = new System.Windows.Forms.TextBox();
+            this.LastName = new System.Windows.Forms.TextBox();
+            this.UserName = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
+            this.CreateAccount = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -106,49 +106,51 @@
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 6;
             // 
-            // textBox2
+            // FirstName
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightGray;
-            this.textBox2.Location = new System.Drawing.Point(32, 232);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(333, 26);
-            this.textBox2.TabIndex = 7;
+            this.FirstName.BackColor = System.Drawing.Color.LightGray;
+            this.FirstName.Location = new System.Drawing.Point(32, 232);
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Size = new System.Drawing.Size(333, 26);
+            this.FirstName.TabIndex = 7;
             // 
-            // textBox3
+            // LastName
             // 
-            this.textBox3.BackColor = System.Drawing.Color.LightGray;
-            this.textBox3.Location = new System.Drawing.Point(32, 311);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(333, 26);
-            this.textBox3.TabIndex = 8;
+            this.LastName.BackColor = System.Drawing.Color.LightGray;
+            this.LastName.Location = new System.Drawing.Point(32, 311);
+            this.LastName.Name = "LastName";
+            this.LastName.Size = new System.Drawing.Size(333, 26);
+            this.LastName.TabIndex = 8;
+            this.LastName.TextChanged += new System.EventHandler(this.LastName_TextChanged);
             // 
-            // textBox5
+            // UserName
             // 
-            this.textBox5.BackColor = System.Drawing.Color.LightGray;
-            this.textBox5.Location = new System.Drawing.Point(32, 461);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(333, 26);
-            this.textBox5.TabIndex = 10;
+            this.UserName.BackColor = System.Drawing.Color.LightGray;
+            this.UserName.Location = new System.Drawing.Point(32, 461);
+            this.UserName.Name = "UserName";
+            this.UserName.Size = new System.Drawing.Size(333, 26);
+            this.UserName.TabIndex = 10;
             // 
-            // textBox6
+            // Password
             // 
-            this.textBox6.BackColor = System.Drawing.Color.LightGray;
-            this.textBox6.Location = new System.Drawing.Point(32, 547);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(333, 26);
-            this.textBox6.TabIndex = 11;
+            this.Password.BackColor = System.Drawing.Color.LightGray;
+            this.Password.Location = new System.Drawing.Point(32, 547);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(333, 26);
+            this.Password.TabIndex = 11;
             // 
-            // button1
+            // CreateAccount
             // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(125, 606);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 50);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Create Account";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CreateAccount.BackColor = System.Drawing.Color.Maroon;
+            this.CreateAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateAccount.ForeColor = System.Drawing.Color.White;
+            this.CreateAccount.Location = new System.Drawing.Point(125, 606);
+            this.CreateAccount.Name = "CreateAccount";
+            this.CreateAccount.Size = new System.Drawing.Size(171, 50);
+            this.CreateAccount.TabIndex = 12;
+            this.CreateAccount.Text = "Create Account";
+            this.CreateAccount.UseVisualStyleBackColor = false;
+            this.CreateAccount.Click += new System.EventHandler(this.CreateAccount_Click);
             // 
             // label1
             // 
@@ -177,11 +179,11 @@
             this.ClientSize = new System.Drawing.Size(444, 696);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.CreateAccount);
+            this.Controls.Add(this.Password);
+            this.Controls.Add(this.UserName);
+            this.Controls.Add(this.LastName);
+            this.Controls.Add(this.FirstName);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -208,11 +210,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox FirstName;
+        private System.Windows.Forms.TextBox LastName;
+        private System.Windows.Forms.TextBox UserName;
+        private System.Windows.Forms.TextBox Password;
+        private System.Windows.Forms.Button CreateAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }

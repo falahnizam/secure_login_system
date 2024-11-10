@@ -9,7 +9,7 @@ public sealed class PasswordHash
     /// hashiter defines the number of iteration userd i the pkbd2 algorthim more the iteration lesser the chance for brute force attack
     /// _Salt and _hash these fields that store the salt and the resukting hash of password
     /// </summary>
-    const int SaltSize = 16, HashSize = 20, HashIter = 1000;
+    const int SaltSize = 16, HashSize = 20, HashIter = 10000;
     readonly byte[] _salt, _hash;
 
 // Creating a constructor
@@ -58,4 +58,3 @@ public sealed class PasswordHash
         return true;
     }
 }
-//  code :http://csharptest.net/470/another-example-of-how-to-store-a-salted-password-hash/
