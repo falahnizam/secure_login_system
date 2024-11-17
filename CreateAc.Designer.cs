@@ -121,7 +121,7 @@
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(333, 26);
             this.LastName.TabIndex = 8;
-            this.LastName.TextChanged += new System.EventHandler(this.LastName_TextChanged);
+      
             // 
             // UserName
             // 
@@ -195,7 +195,6 @@
             this.Name = "CreateAc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateAc";
-            this.Load += new System.EventHandler(this.CreateAc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

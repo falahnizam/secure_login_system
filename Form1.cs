@@ -20,21 +20,6 @@ namespace login
             accountService = new AccountService(); 
         }
 
-        private void SIGN_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SignIn_Click(object sender, EventArgs e)
         {
             string username = txtUserName.Text;
@@ -48,17 +33,40 @@ namespace login
             }
 
             // Call the AuthenticateUser method
-            bool isAuthenticated = accountService.AuthenticateUser(username, password);
-            if (isAuthenticated)
+            var result = accountService.AuthenticateUser(username, password);
+
+            // Check if authentication was successful
+            if (result.IsAuthenticated)
             {
                 MessageBox.Show("Login Successful");
-                // Optionally, you can navigate to the DashboardUser here
-                DashboardUser dashboardUser = new DashboardUser();
-                dashboardUser.Show();
-                this.Hide(); // Hide the login form
+
+                // Role-based redirection
+                if (result.RoleID == 1) // Admin role
+                {
+                    // Open Admin Dashboard
+                    AdminDashBoard adminDashboard = new AdminDashBoard();
+                    adminDashboard.Show();
+                    this.Hide(); // Hide the login form
+                }
+                else if (result.RoleID == 2) // Regular user role
+                {
+                    // Open User Dashboard
+                    DashboardUser userDashboard = new DashboardUser();
+                    userDashboard.Show();
+                    this.Hide(); // Hide the login form
+                }
+                else if (result.RoleID == 4) // Pending role
+                {
+                    MessageBox.Show("Your account is pending approval. Please contact an administrator.", "Pending Approval", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Your account role is not recognized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
+                // Authentication failed
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

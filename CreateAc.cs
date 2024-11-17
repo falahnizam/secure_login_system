@@ -36,15 +36,8 @@ namespace login
             dateTimePicker1.Value = DateTime.Now; // Reset the date picker to the current date
         }
 
-        private void CreateAc_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void LastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void CreateAccount_Click(object sender, EventArgs e)
         {

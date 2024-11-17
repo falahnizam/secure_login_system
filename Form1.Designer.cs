@@ -53,7 +53,7 @@
             this.label1.Size = new System.Drawing.Size(453, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Togther Culture";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // label2
             // 
@@ -73,7 +73,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(410, 34);
             this.txtUserName.TabIndex = 2;
-            this.txtUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // txtPassword
             // 
@@ -157,7 +157,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Cornsilk;
-            this.Load += new System.EventHandler(this.SIGN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
