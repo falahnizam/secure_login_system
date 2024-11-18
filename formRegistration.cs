@@ -19,33 +19,12 @@ namespace login
             accountService = new AccountService();
         }
 
-        private void formRegistration_Load(object sender, EventArgs e)
+        private void btnLoadData_Click(object sender, EventArgs e)
         {
-            LoadPendingUsers();
-
+            // returns the object of the DBconnection class
+            DBconnection dBconnection = DBconnection.getInstanceOfDBconnection();
+            DataSet dsUserDetails = dBconnection.ExecuteQuery("Select * from UserDetails");
+            dgvRegistration.DataSource = dsUserDetails.Tables[0];
         }
-        private void LoadPendingUsers()
-        {
-            try
-            {
-                // Get the list of pending users
-                DataSet pendingUsers = accountService.GetPendingUsers();
-
-                // Clear any existing rows in the DataGridView
-                dgvPendingUsers.Rows.Clear();
-
-                // Loop through the data and add rows to DataGridView
-                foreach (DataRow row in pendingUsers.Tables[0].Rows)
-                {
-                    // Add the user data into DataGridView
-                    dgvPendingUsers.Rows.Add(row["UserID"], row["FirstName"], row["LastName"], row["DOB"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading pending users: {ex.Message}");
-            }
-        }
-
     }
 }

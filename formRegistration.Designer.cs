@@ -28,36 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPendingUser = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPendingUser)).BeginInit();
+            this.dgvRegistration = new System.Windows.Forms.DataGridView();
+            this.btnLoadData = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistration)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvPendingUser
+            // dgvRegistration
             // 
-            this.dgvPendingUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPendingUser.Location = new System.Drawing.Point(0, 0);
-            this.dgvPendingUser.Name = "dgvPendingUser";
-            this.dgvPendingUser.RowHeadersWidth = 62;
-            this.dgvPendingUser.RowTemplate.Height = 28;
-            this.dgvPendingUser.Size = new System.Drawing.Size(240, 150);
-            this.dgvPendingUser.TabIndex = 0;
+            this.dgvRegistration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistration.Location = new System.Drawing.Point(0, -3);
+            this.dgvRegistration.Name = "dgvRegistration";
+            this.dgvRegistration.RowHeadersWidth = 62;
+            this.dgvRegistration.RowTemplate.Height = 28;
+            this.dgvRegistration.Size = new System.Drawing.Size(797, 333);
+            this.dgvRegistration.TabIndex = 0;
+            // 
+            // btnLoadData
+            // 
+            this.btnLoadData.Location = new System.Drawing.Point(0, 396);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(155, 42);
+            this.btnLoadData.TabIndex = 1;
+            this.btnLoadData.Text = "Load Data";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
             // formRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvPendingUser);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnLoadData);
+            this.Controls.Add(this.dgvRegistration);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formRegistration";
-            this.Text = "formNotices";
-            this.Load += new System.EventHandler(this.formRegistration_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPendingUser)).EndInit();
+            this.Text = "Registration";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistration)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvPendingUser;
+        private System.Windows.Forms.DataGridView dgvRegistration;
+        private System.Windows.Forms.Button btnLoadData;
     }
 }

@@ -304,7 +304,7 @@
             this.btnRegistration.Text = "📝  Registration";
             this.btnRegistration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistration.UseVisualStyleBackColor = false;
-            this.btnRegistration.Click += new System.EventHandler(this.formNotices_Click);
+            this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click_1);
             // 
             // pnMembership
             // 

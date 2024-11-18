@@ -24,7 +24,7 @@ namespace login
             return instances; // Return the singleton instance
         }
 
-        // Method for executing queries that return data (e.g., SELECT)
+        // Method for executing queries that return data 
         public DataSet ExecuteQuery(string sqlQuery, SqlParameter[] parameters = null)
         {
             DataSet dataSet = new DataSet(); // Create a new DataSet to hold results

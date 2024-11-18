@@ -132,25 +132,33 @@ namespace login
         {
             dashboard = null;
         }
-
-        private void btnRegistration_Click(object sender, EventArgs e)
-        {
-            if (registration == null || registration.IsDisposed)
-            {
-                registration = new formRegistration();
-                registration.FormClosed += registration_FormClosed;
-                registration.MdiParent = this;
-                registration.Show();
-            }
-            else
-            {
-                registration.Activate();
-            }
-        }
-
+        
         private void registration_FormClosed(object sender, FormClosedEventArgs e)
         {
             registration = null;
+        }
+
+        private void btnRegistration_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (registration == null || registration.IsDisposed)
+                {
+                    registration = new formRegistration();
+                    registration.FormClosed += registration_FormClosed;
+                    registration.MdiParent = this;  // Ensure this form is an MDI child
+                    registration.Show();
+                }
+                else
+                {
+                    registration.Activate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while opening the Registration form: {ex.Message}");
+            }
         }
     }
 }
