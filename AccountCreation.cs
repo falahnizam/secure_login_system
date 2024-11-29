@@ -73,7 +73,6 @@ namespace login
                 Console.WriteLine(ex.StackTrace);
                 return false;
             }
-
         }
 
         public class UserAuthenticationResult
