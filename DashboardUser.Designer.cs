@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardUser));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -38,7 +39,7 @@
             this.pnDashboard = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pnProfile = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.pnMembership = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.pnDigitalContent = new System.Windows.Forms.Panel();
@@ -53,10 +54,9 @@
             this.pnChat = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.pnLogout = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnDashBoard = new System.Windows.Forms.Button();
             this.eventTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -83,6 +83,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1253, 39);
             this.panel1.TabIndex = 1;
+            // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(1114, 0);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 3;
             // 
             // btnHam
             // 
@@ -149,26 +173,27 @@
             // 
             // pnProfile
             // 
-            this.pnProfile.Controls.Add(this.button7);
+            this.pnProfile.Controls.Add(this.btnProfile);
             this.pnProfile.Location = new System.Drawing.Point(3, 84);
             this.pnProfile.Name = "pnProfile";
             this.pnProfile.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.pnProfile.Size = new System.Drawing.Size(246, 75);
             this.pnProfile.TabIndex = 10;
             // 
-            // button7
+            // btnProfile
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(-21, -16);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(297, 106);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "  🙍‍♂️   Profile";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Location = new System.Drawing.Point(-21, -16);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(297, 106);
+            this.btnProfile.TabIndex = 1;
+            this.btnProfile.Text = "  🙍‍♂️   Profile";
+            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // pnMembership
             // 
@@ -322,27 +347,28 @@
             // 
             // pnLogout
             // 
-            this.pnLogout.Controls.Add(this.button8);
+            this.pnLogout.Controls.Add(this.btnDashBoard);
             this.pnLogout.Location = new System.Drawing.Point(3, 489);
             this.pnLogout.Name = "pnLogout";
             this.pnLogout.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.pnLogout.Size = new System.Drawing.Size(246, 75);
             this.pnLogout.TabIndex = 10;
             // 
-            // button8
+            // btnDashBoard
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button8.Location = new System.Drawing.Point(-11, -23);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(297, 106);
-            this.button8.TabIndex = 1;
-            this.button8.Text = " 👋   Logout";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnDashBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnDashBoard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBoard.ForeColor = System.Drawing.Color.White;
+            this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnDashBoard.Location = new System.Drawing.Point(-11, -23);
+            this.btnDashBoard.Name = "btnDashBoard";
+            this.btnDashBoard.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnDashBoard.Size = new System.Drawing.Size(297, 106);
+            this.btnDashBoard.TabIndex = 1;
+            this.btnDashBoard.Text = " 👋   Logout";
+            this.btnDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashBoard.UseVisualStyleBackColor = false;
+            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
             // eventTransition
             // 
@@ -354,30 +380,6 @@
             this.sidebarTransition.Interval = 10;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
-            // nightControlBox1
-            // 
-            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(770, 3);
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
-            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox1.TabIndex = 3;
-            // 
             // DashboardUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -386,8 +388,10 @@
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "DashboardUser";
             this.Text = "\\";
+            this.Load += new System.EventHandler(this.DashboardUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
@@ -422,9 +426,9 @@
         private System.Windows.Forms.Panel pnChat;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel pnLogout;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnDashBoard;
         private System.Windows.Forms.Panel pnProfile;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button EventsMenu;
         private System.Windows.Forms.Timer eventTransition;

@@ -20,7 +20,7 @@ namespace login
             accountService = new AccountService(); 
         }
 
-        private void SignIn_Click(object sender, EventArgs e)
+        private void SignIn_Click_1(object sender, EventArgs e)
         {
             string username = txtUserName.Text;
             string password = txtPassword.Text;
@@ -69,13 +69,16 @@ namespace login
                 // Authentication failed
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void SignUp_Click(object sender, EventArgs e)
+        private void SignUp_Click_1(object sender, EventArgs e)
         {
+
             CreateAc createAccountForm = new CreateAc();
             createAccountForm.Show();
             this.Hide();
+
         }
     }
 

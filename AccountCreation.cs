@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace login
 {
@@ -14,7 +15,7 @@ namespace login
         }
 
         // Method to create an account (register user) with "Pending" role
-        public bool CreateAccount(string username, string password, string firstName, string lastName, DateTime dob)
+        public bool CreateAccount(string username, string password, string firstName, string lastName, DateTime dob, string gender, string v)
         {
             try
             {
@@ -24,18 +25,27 @@ namespace login
                 // Define the default RoleID for "Pending" (Assuming RoleID 4 is for "Pending")
                 int pendingRoleID = 4;
 
-                // Define the SQL query for inserting user details
-                string userQuery = @"INSERT INTO UserDetails (FirstName, LastName, DOB, RoleID) 
-                                 VALUES (@FirstName, @LastName, @DOB, @RoleID);
-                                 SELECT SCOPE_IDENTITY();"; // Get the new UserID
+                // Validate the gender (optional, depending on your use case)
+                if (string.IsNullOrEmpty(gender) || !new[] { "Male", "Female", "Other" }.Contains(gender))
+                {
+                    // Log an error or handle invalid gender input
+                    Console.WriteLine("Invalid gender value.");
+                    return false; // Exit early if gender is invalid
+                }
 
-                // Parameters for the user details query
+                // Define the SQL query for inserting user details (including gender)
+                string userQuery = @"INSERT INTO UserDetails (FirstName, LastName, DOB, Gender, RoleID) 
+                             VALUES (@FirstName, @LastName, @DOB, @Gender, @RoleID);
+                             SELECT SCOPE_IDENTITY();"; // Get the new UserID
+
+                // Parameters for the user details query, including the gender
                 SqlParameter[] userParams = {
-                new SqlParameter("@FirstName", firstName),
-                new SqlParameter("@LastName", lastName),
-                new SqlParameter("@DOB", dob),
-                new SqlParameter("@RoleID", pendingRoleID)  // Insert the "Pending" role ID
-            };
+                    new SqlParameter("@FirstName", firstName),
+                    new SqlParameter("@LastName", lastName),
+                    new SqlParameter("@DOB", dob),
+                    new SqlParameter("@Gender", gender),  // Insert gender
+                    new SqlParameter("@RoleID", pendingRoleID)  // Insert the "Pending" role ID
+                };
 
                 // Execute the query and get the new UserID
                 DataSet result = db.ExecuteQuery(userQuery, userParams);
@@ -49,21 +59,20 @@ namespace login
 
                 // Define the SQL query for inserting login credentials
                 string loginQuery = @"INSERT INTO Login (UserName, Password, UserID) 
-                                  VALUES (@UserName, @Password, @UserID)";
+                              VALUES (@UserName, @Password, @UserID)";
 
                 // Parameters for the login query
                 SqlParameter[] loginParams = {
-                new SqlParameter("@UserName", username),
-                new SqlParameter("@Password", Convert.ToBase64String(passwordHash.ToArray())), // Store the hashed password
-                new SqlParameter("@UserID", userId)  // Use the int value for UserID
-            };
+                    new SqlParameter("@UserName", username),
+                    new SqlParameter("@Password", Convert.ToBase64String(passwordHash.ToArray())), // Store the hashed password
+                    new SqlParameter("@UserID", userId)  // Use the int value for UserID
+                };
 
                 // Execute the query to insert login credentials
                 int rowsAffected = db.ExecuteNonQuery(loginQuery, loginParams);
 
                 // Return true if the account creation was successful
                 return rowsAffected > 0;
-
             }
             catch (Exception ex)
             {
@@ -79,17 +88,17 @@ namespace login
         {
             public bool IsAuthenticated { get; set; }
             public int RoleID { get; set; }
-
         }
 
         // Method to authenticate a user during login
         public UserAuthenticationResult AuthenticateUser(string username, string password)
         {
             // Query to retrieve the stored password hash and RoleID for the given username
-            string query = @"SELECT L.Password, UD.RoleID 
+            string query = @"SELECT L.Password, UD.RoleID
                      FROM Login L
                      INNER JOIN UserDetails UD ON L.UserID = UD.UserID
                      WHERE L.UserName = @UserName";
+
             SqlParameter[] parameters = {
         new SqlParameter("@UserName", username)
     };
@@ -100,7 +109,7 @@ namespace login
             // Check if a user was found and retrieve the stored password and role
             if (result.Tables[0].Rows.Count > 0)
             {
-                // First check if the RoleID and Password columns are not null
+                // Check if the RoleID and Password columns are not null
                 if (!Convert.IsDBNull(result.Tables[0].Rows[0]["RoleID"]) && !Convert.IsDBNull(result.Tables[0].Rows[0]["Password"]))
                 {
                     // Get the RoleID (e.g., 1 = Admin, 2 = User, 4 = Pending)
@@ -115,21 +124,21 @@ namespace login
                     // Verify the entered password
                     if (storedPasswordHash.Verify(password))
                     {
-                        // If password matches, return authentication success and RoleID
+                        // If password matches, return authentication success, RoleID
                         return new UserAuthenticationResult
                         {
                             IsAuthenticated = true,
-                            RoleID = roleId  // Return the RoleID for redirection logic
+                            RoleID = roleId, // Return the RoleID
                         };
                     }
                 }
             }
 
-            // Return failed authentication
+            // Return failed authentication if password verification or user lookup failed
             return new UserAuthenticationResult
             {
                 IsAuthenticated = false,
-                RoleID = 0  // Invalid or no role for failed login
+                RoleID = 0,  // Invalid or no role for failed login
             };
         }
 
@@ -163,6 +172,7 @@ namespace login
             // Similar to the AuthorizeUser method but for general role updates
             return AuthorizeUser(userId, newRoleId);
         }
+
         public bool RejectUser(int userId, string reason)
         {
             try
@@ -171,9 +181,9 @@ namespace login
                 string query = @"INSERT INTO RejectedUsers (UserID, Reason) 
                          VALUES (@UserID, @Reason)";
                 SqlParameter[] parameters = {
-            new SqlParameter("@UserID", userId),
-            new SqlParameter("@Reason", reason)
-        };
+                    new SqlParameter("@UserID", userId),
+                    new SqlParameter("@Reason", reason)
+                };
 
                 int rowsAffected = db.ExecuteNonQuery(query, parameters);
 
@@ -192,6 +202,12 @@ namespace login
                 return false;
             }
         }
+
+        internal bool CreateAccount(string username, string password, string firstName, string lastName, DateTime dob, string gender, string v1, string v2)
+        {
+            throw new NotImplementedException();
+        }
+
 
     }
 }

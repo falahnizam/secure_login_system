@@ -12,9 +12,22 @@ namespace login
 {
     public partial class DashboardUser : Form
     {
+        formProfile profile;
         public DashboardUser()
         {
             InitializeComponent();
+
+        }
+
+        private void mdiprop()
+        {
+            // Set the MDI properties (bevel and background color)
+            this.SetBevel(false);  // This method is from  mdiProperties static class
+            var mdiClient = this.Controls.OfType<MdiClient>().FirstOrDefault();
+            if (mdiClient != null)
+            {
+                mdiClient.BackColor = Color.FromArgb(232, 234, 237); // Set the background color
+            }
         }
         bool eventExpand = false;
         private void eventTransition_Tick(object sender, EventArgs e)
@@ -84,6 +97,56 @@ namespace login
         private void EventsMenu_Click_1(object sender, EventArgs e)
         {
             eventTransition.Start();
+        }
+
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            var confirmationResult = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                // Close the current Admin Dashboard form
+                this.Close();
+                // Hide the User Dashboard
+
+                // Show the login form
+                pnLogin loginForm = new pnLogin();
+                loginForm.Show();
+
+            }
+        }
+
+        private void DashboardUser_Load(object sender, EventArgs e)
+        {
+            // Apply MDI properties when the dashboard loads
+            mdiprop();
+
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            if (profile == null || profile.IsDisposed)
+            {
+
+                formProfile formProfile = new formProfile();
+                profile = formProfile;  // Create a new instance of the form
+                profile.FormClosed += Dashboard_FormClosed;  // Subscribe to FormClosed event
+                profile.MdiParent = this;  // Set the MDI parent
+                profile.WindowState = FormWindowState.Maximized;
+                profile.ControlBox = false;
+                profile.Show();  // Show the form
+            }
+            else
+            {
+                // If the form is already open, bring it to the front
+                profile.Activate();
+                profile.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            profile = null;
         }
     }
 }

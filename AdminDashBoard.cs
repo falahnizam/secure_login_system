@@ -16,6 +16,7 @@ namespace login
         // Declare variables for child forms
         formDashBoard dashboard;
         formRegistration registration;
+        PendingUsers pendingUser;
         formLogout logout;
 
         public AdminDashBoard()
@@ -39,6 +40,37 @@ namespace login
             // Apply MDI properties when the dashboard loads
             mdiprop();
         }
+
+        bool registrationExpand = false;
+        private void RegistrationMenuTransition_Tick(object sender, EventArgs e)
+        {
+            if (registrationExpand == false)
+            {
+                RegistrationMenuContainer.Height += 10;
+                if (RegistrationMenuContainer.Height >= 154)
+                {
+                    RegistrationMenuTransition.Stop();
+                    registrationExpand = true;
+                }
+                
+            }else
+            {
+                RegistrationMenuContainer.Height -= 10;
+                if (RegistrationMenuContainer.Height <= 56)
+                {
+                    RegistrationMenuTransition.Stop();
+                    registrationExpand = false;
+                }
+            }
+
+        }
+        private void btnRegistration_Click(object sender, EventArgs e)
+        {
+            RegistrationMenuTransition.Start();
+
+        }
+
+
 
         bool eventExpand = false;
 
@@ -96,10 +128,11 @@ namespace login
                     // Adjust child forms’ width when sidebar is expanded
                     btnDashboard.Width = sidebar.Width;
                     formDigitalContent.Width = sidebar.Width;
-                    formLogout.Width = sidebar.Width;
+                    btnLogout.Width = sidebar.Width;
                     btnRegistration.Width = sidebar.Width;
                     formMembership.Width = sidebar.Width;
                     EventMenuContainer.Width = sidebar.Width;
+                    RegistrationMenuContainer.Width = sidebar.Width;
                 }
             }
         }
@@ -115,17 +148,22 @@ namespace login
         {
             if (dashboard == null || dashboard.IsDisposed)
             {
+                
                 dashboard = new formDashBoard();  // Create a new instance of the form
                 dashboard.FormClosed += Dashboard_FormClosed;  // Subscribe to FormClosed event
                 dashboard.MdiParent = this;  // Set the MDI parent
+                dashboard.WindowState = FormWindowState.Maximized;
+                dashboard.ControlBox = false;
                 dashboard.Show();  // Show the form
             }
             else
             {
                 // If the form is already open, bring it to the front
                 dashboard.Activate();
+                dashboard.WindowState = FormWindowState.Maximized;
             }
         }
+
 
         // Reset the dashboard reference when the form is closed
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -138,9 +176,10 @@ namespace login
             registration = null;
         }
 
-        private void btnRegistration_Click_1(object sender, EventArgs e)
-        {
+       
 
+        private void btnRegisterd_Click(object sender, EventArgs e)
+        {
             try
             {
                 if (registration == null || registration.IsDisposed)
@@ -148,11 +187,14 @@ namespace login
                     registration = new formRegistration();
                     registration.FormClosed += registration_FormClosed;
                     registration.MdiParent = this;  // Ensure this form is an MDI child
+                    registration.ControlBox = false;
+                    registration.WindowState = FormWindowState.Maximized;
                     registration.Show();
                 }
                 else
                 {
                     registration.Activate();
+                    registration.WindowState = FormWindowState.Maximized;
                 }
             }
             catch (Exception ex)
@@ -160,5 +202,55 @@ namespace login
                 MessageBox.Show($"An error occurred while opening the Registration form: {ex.Message}");
             }
         }
+
+        private void btnPending_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (pendingUser == null || pendingUser.IsDisposed)
+                {
+                    
+                    pendingUser = new PendingUsers();
+                    pendingUser.FormClosed += PendingUser_FormClosed;
+                    pendingUser.MdiParent = this;
+                    pendingUser.ControlBox = false;
+                    pendingUser.WindowState = FormWindowState.Maximized;
+                    pendingUser.Show();
+                }
+                else
+                {
+                    pendingUser.Activate();
+                    pendingUser.WindowState = FormWindowState.Maximized;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while opening the Registration form: {ex.Message}");
+            }
+        }
+
+        private void PendingUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pendingUser = null;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var confirmationResult = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                // Close the current Admin Dashboard form
+                this.Hide(); 
+                // Hide the Admin Dashboard
+
+                // Show the login form
+                pnLogin loginForm = new pnLogin();
+                loginForm.Show();
+
+            }
+
+        }
     }
 }
+    
