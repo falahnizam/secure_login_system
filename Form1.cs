@@ -51,7 +51,7 @@ namespace login
                 else if (result.RoleID == 2) // Regular user role
                 {
                     // Open User Dashboard
-                    DashboardUser userDashboard = new DashboardUser();
+                    DashboardUser userDashboard = new DashboardUser(result.UserID);
                     userDashboard.Show();
                     this.Hide(); // Hide the login form
                 }
@@ -80,6 +80,10 @@ namespace login
             this.Hide();
 
         }
+
+        
+
+      
     }
 
 }

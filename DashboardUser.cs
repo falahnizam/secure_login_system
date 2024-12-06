@@ -12,10 +12,12 @@ namespace login
 {
     public partial class DashboardUser : Form
     {
+        private int userId;
         formProfile profile;
-        public DashboardUser()
+        public DashboardUser(int userId)
         {
             InitializeComponent();
+            this.userId = userId;
 
         }
 
@@ -34,8 +36,8 @@ namespace login
         {
             if (eventExpand == false)
             {
-                EventContainer.Height += 10;
-                if(EventContainer.Height >= 120)
+                EventContainers.Height += 10;
+                if(EventContainers.Height >= 123)
                 {
                     eventTransition.Stop();
                     eventExpand = true;
@@ -43,9 +45,9 @@ namespace login
             }
             else
             {
-                EventContainer.Height -= 10;
+                EventContainers.Height -= 10;
                 //event height = 55
-                if (EventContainer.Height <= 55)
+                if (EventContainers.Height <= 48)
                 {
                     eventTransition.Stop();
                     eventExpand = false;
@@ -63,7 +65,7 @@ namespace login
             if (sidebarExpand)
             {
                 sidebar.Width -= 22; // Decrease the width by 10px every tick (i.e., collapsing)
-                if (sidebar.Width <= 72) // When the sidebar reaches 72px width, stop collapsing
+                if (sidebar.Width <= 48) // When the sidebar reaches 72px width, stop collapsing
                 {
                     sidebarExpand = false; // The sidebar is now fully collapsed
                     sidebarTransition.Stop(); // Stop the timer to stop the animation
@@ -72,7 +74,7 @@ namespace login
             else // If the sidebar is collapsed, we want to expand it
             {
                 sidebar.Width += 22; // Increase the width by 10px every tick 
-                if (sidebar.Width >=158) // When the sidebar reaches 220px width, stop expanding
+                if (sidebar.Width >=134) // When the sidebar reaches 220px width, stop expanding
                 {
                     sidebarExpand = true; // The sidebar is now fully expanded
                     sidebarTransition.Stop(); // Stop the timer to stop the animation
@@ -83,7 +85,7 @@ namespace login
                     pnLogout.Width = sidebar.Width;
                     pnProfile.Width = sidebar.Width;
                     pnMembership.Width = sidebar.Width;
-                    EventContainer.Width = sidebar.Width;
+                    EventContainers.Width = sidebar.Width;
                 }
             }
         }
@@ -93,11 +95,14 @@ namespace login
         {
             sidebarTransition.Start();
         }
-
-        private void EventsMenu_Click_1(object sender, EventArgs e)
+        
+        
+        private void EventsMenu_Click(object sender, EventArgs e)
         {
             eventTransition.Start();
         }
+
+
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
@@ -122,17 +127,17 @@ namespace login
             mdiprop();
 
         }
-
-        private void btnProfile_Click(object sender, EventArgs e)
+        private void btnProfile_Click_1(object sender, EventArgs e)
         {
             if (profile == null || profile.IsDisposed)
             {
 
-                formProfile formProfile = new formProfile();
+                formProfile formProfile = new formProfile(userId);
                 profile = formProfile;  // Create a new instance of the form
+                profile.Dock = DockStyle.Fill;
                 profile.FormClosed += Dashboard_FormClosed;  // Subscribe to FormClosed event
                 profile.MdiParent = this;  // Set the MDI parent
-                profile.WindowState = FormWindowState.Maximized;
+                //profile.WindowState = FormWindowState.Maximized;
                 profile.ControlBox = false;
                 profile.Show();  // Show the form
             }
@@ -144,9 +149,32 @@ namespace login
             }
         }
 
+
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             profile = null;
+        }
+
+        private void customButton6_Click(object sender, EventArgs e)
+        {
+            var confirmationResult = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                // Close the current Admin Dashboard form
+                this.Hide();
+                // Hide the Admin Dashboard
+
+                // Show the login form
+                pnLogin loginForm = new pnLogin();
+                loginForm.Show();
+
+            }
+        }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

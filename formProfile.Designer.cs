@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProfile));
             this.txtName = new ReaLTaiizor.Controls.MetroLabel();
-            this.aloneTextBox1 = new ReaLTaiizor.Controls.AloneTextBox();
-            this.aloneTextBox2 = new ReaLTaiizor.Controls.AloneTextBox();
+            this.FirstName = new ReaLTaiizor.Controls.AloneTextBox();
+            this.LastName = new ReaLTaiizor.Controls.AloneTextBox();
             this.metroLabel1 = new ReaLTaiizor.Controls.MetroLabel();
-            this.aloneTextBox3 = new ReaLTaiizor.Controls.AloneTextBox();
+            this.Gender = new ReaLTaiizor.Controls.AloneTextBox();
             this.metroLabel2 = new ReaLTaiizor.Controls.MetroLabel();
-            this.aloneTextBox4 = new ReaLTaiizor.Controls.AloneTextBox();
+            this.DOB = new ReaLTaiizor.Controls.AloneTextBox();
             this.metroLabel3 = new ReaLTaiizor.Controls.MetroLabel();
-            this.aloneTextBox5 = new ReaLTaiizor.Controls.AloneTextBox();
+            this.Joined = new ReaLTaiizor.Controls.AloneTextBox();
             this.metroLabel4 = new ReaLTaiizor.Controls.MetroLabel();
             this.txtBio = new ReaLTaiizor.Controls.AloneTextBox();
             this.metroLabel5 = new ReaLTaiizor.Controls.MetroLabel();
             this.Image1 = new login.CircularPictureBox();
-            this.btnSaveChanges = new ReaLTaiizor.Controls.AirButton();
+            this.btnSaveChanges = new ReaLTaiizor.Controls.CyberButton();
+            this.gradientPanel1 = new login.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.Image1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,43 +57,43 @@
             this.txtName.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             this.txtName.StyleManager = null;
             this.txtName.TabIndex = 4;
-            this.txtName.Text = "Name";
+            this.txtName.Text = "First Name";
             this.txtName.ThemeAuthor = "Taiizor";
             this.txtName.ThemeName = "MetroLight";
             // 
-            // aloneTextBox1
+            // FirstName
             // 
-            this.aloneTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.aloneTextBox1.EnabledCalc = true;
-            this.aloneTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.aloneTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.aloneTextBox1.Location = new System.Drawing.Point(33, 185);
-            this.aloneTextBox1.MaxLength = 32767;
-            this.aloneTextBox1.MultiLine = false;
-            this.aloneTextBox1.Name = "aloneTextBox1";
-            this.aloneTextBox1.ReadOnly = false;
-            this.aloneTextBox1.Size = new System.Drawing.Size(245, 29);
-            this.aloneTextBox1.TabIndex = 5;
-            this.aloneTextBox1.Text = "aloneTextBox1";
-            this.aloneTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.aloneTextBox1.UseSystemPasswordChar = false;
+            this.FirstName.BackColor = System.Drawing.Color.Transparent;
+            this.FirstName.EnabledCalc = true;
+            this.FirstName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FirstName.ForeColor = System.Drawing.Color.DimGray;
+            this.FirstName.Location = new System.Drawing.Point(33, 185);
+            this.FirstName.MaxLength = 32767;
+            this.FirstName.MultiLine = false;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = false;
+            this.FirstName.Size = new System.Drawing.Size(245, 29);
+            this.FirstName.TabIndex = 5;
+            this.FirstName.Text = "First Name";
+            this.FirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.FirstName.UseSystemPasswordChar = false;
             // 
-            // aloneTextBox2
+            // LastName
             // 
-            this.aloneTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.aloneTextBox2.EnabledCalc = true;
-            this.aloneTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.aloneTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.aloneTextBox2.Location = new System.Drawing.Point(33, 261);
-            this.aloneTextBox2.MaxLength = 32767;
-            this.aloneTextBox2.MultiLine = false;
-            this.aloneTextBox2.Name = "aloneTextBox2";
-            this.aloneTextBox2.ReadOnly = false;
-            this.aloneTextBox2.Size = new System.Drawing.Size(245, 29);
-            this.aloneTextBox2.TabIndex = 7;
-            this.aloneTextBox2.Text = "aloneTextBox2";
-            this.aloneTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.aloneTextBox2.UseSystemPasswordChar = false;
+            this.LastName.BackColor = System.Drawing.Color.Transparent;
+            this.LastName.EnabledCalc = true;
+            this.LastName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LastName.ForeColor = System.Drawing.Color.DimGray;
+            this.LastName.Location = new System.Drawing.Point(33, 261);
+            this.LastName.MaxLength = 32767;
+            this.LastName.MultiLine = false;
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = false;
+            this.LastName.Size = new System.Drawing.Size(245, 29);
+            this.LastName.TabIndex = 7;
+            this.LastName.Text = "Last Name";
+            this.LastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LastName.UseSystemPasswordChar = false;
             // 
             // metroLabel1
             // 
@@ -104,26 +105,26 @@
             this.metroLabel1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             this.metroLabel1.StyleManager = null;
             this.metroLabel1.TabIndex = 6;
-            this.metroLabel1.Text = "User Name";
+            this.metroLabel1.Text = "Last Name";
             this.metroLabel1.ThemeAuthor = "Taiizor";
             this.metroLabel1.ThemeName = "MetroLight";
             // 
-            // aloneTextBox3
+            // Gender
             // 
-            this.aloneTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.aloneTextBox3.EnabledCalc = true;
-            this.aloneTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.aloneTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.aloneTextBox3.Location = new System.Drawing.Point(33, 335);
-            this.aloneTextBox3.MaxLength = 32767;
-            this.aloneTextBox3.MultiLine = false;
-            this.aloneTextBox3.Name = "aloneTextBox3";
-            this.aloneTextBox3.ReadOnly = false;
-            this.aloneTextBox3.Size = new System.Drawing.Size(245, 29);
-            this.aloneTextBox3.TabIndex = 9;
-            this.aloneTextBox3.Text = "aloneTextBox3";
-            this.aloneTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.aloneTextBox3.UseSystemPasswordChar = false;
+            this.Gender.BackColor = System.Drawing.Color.Transparent;
+            this.Gender.EnabledCalc = true;
+            this.Gender.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Gender.ForeColor = System.Drawing.Color.DimGray;
+            this.Gender.Location = new System.Drawing.Point(33, 335);
+            this.Gender.MaxLength = 32767;
+            this.Gender.MultiLine = false;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = false;
+            this.Gender.Size = new System.Drawing.Size(245, 29);
+            this.Gender.TabIndex = 9;
+            this.Gender.Text = "Gender";
+            this.Gender.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Gender.UseSystemPasswordChar = false;
             // 
             // metroLabel2
             // 
@@ -139,22 +140,22 @@
             this.metroLabel2.ThemeAuthor = "Taiizor";
             this.metroLabel2.ThemeName = "MetroLight";
             // 
-            // aloneTextBox4
+            // DOB
             // 
-            this.aloneTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.aloneTextBox4.EnabledCalc = true;
-            this.aloneTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.aloneTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.aloneTextBox4.Location = new System.Drawing.Point(33, 411);
-            this.aloneTextBox4.MaxLength = 32767;
-            this.aloneTextBox4.MultiLine = false;
-            this.aloneTextBox4.Name = "aloneTextBox4";
-            this.aloneTextBox4.ReadOnly = false;
-            this.aloneTextBox4.Size = new System.Drawing.Size(245, 40);
-            this.aloneTextBox4.TabIndex = 11;
-            this.aloneTextBox4.Text = "aloneTextBox4";
-            this.aloneTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.aloneTextBox4.UseSystemPasswordChar = false;
+            this.DOB.BackColor = System.Drawing.Color.Transparent;
+            this.DOB.EnabledCalc = true;
+            this.DOB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DOB.ForeColor = System.Drawing.Color.DimGray;
+            this.DOB.Location = new System.Drawing.Point(33, 411);
+            this.DOB.MaxLength = 32767;
+            this.DOB.MultiLine = false;
+            this.DOB.Name = "DOB";
+            this.DOB.ReadOnly = false;
+            this.DOB.Size = new System.Drawing.Size(245, 40);
+            this.DOB.TabIndex = 11;
+            this.DOB.Text = "DOB";
+            this.DOB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DOB.UseSystemPasswordChar = false;
             // 
             // metroLabel3
             // 
@@ -170,22 +171,22 @@
             this.metroLabel3.ThemeAuthor = "Taiizor";
             this.metroLabel3.ThemeName = "MetroLight";
             // 
-            // aloneTextBox5
+            // Joined
             // 
-            this.aloneTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.aloneTextBox5.EnabledCalc = true;
-            this.aloneTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.aloneTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.aloneTextBox5.Location = new System.Drawing.Point(33, 492);
-            this.aloneTextBox5.MaxLength = 32767;
-            this.aloneTextBox5.MultiLine = false;
-            this.aloneTextBox5.Name = "aloneTextBox5";
-            this.aloneTextBox5.ReadOnly = false;
-            this.aloneTextBox5.Size = new System.Drawing.Size(245, 29);
-            this.aloneTextBox5.TabIndex = 13;
-            this.aloneTextBox5.Text = "aloneTextBox5";
-            this.aloneTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.aloneTextBox5.UseSystemPasswordChar = false;
+            this.Joined.BackColor = System.Drawing.Color.Transparent;
+            this.Joined.EnabledCalc = true;
+            this.Joined.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Joined.ForeColor = System.Drawing.Color.DimGray;
+            this.Joined.Location = new System.Drawing.Point(33, 492);
+            this.Joined.MaxLength = 32767;
+            this.Joined.MultiLine = false;
+            this.Joined.Name = "Joined";
+            this.Joined.ReadOnly = false;
+            this.Joined.Size = new System.Drawing.Size(245, 29);
+            this.Joined.TabIndex = 13;
+            this.Joined.Text = "Joined";
+            this.Joined.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Joined.UseSystemPasswordChar = false;
             // 
             // metroLabel4
             // 
@@ -206,7 +207,7 @@
             this.txtBio.BackColor = System.Drawing.Color.Transparent;
             this.txtBio.EnabledCalc = true;
             this.txtBio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.txtBio.ForeColor = System.Drawing.Color.DimGray;
             this.txtBio.Location = new System.Drawing.Point(33, 569);
             this.txtBio.MaxLength = 32767;
             this.txtBio.MultiLine = false;
@@ -234,10 +235,10 @@
             // 
             // Image1
             // 
-            this.Image1.BackColor = System.Drawing.Color.LightGray;
+            this.Image1.BackColor = System.Drawing.Color.Transparent;
             this.Image1.Image = ((System.Drawing.Image)(resources.GetObject("Image1.Image")));
             this.Image1.InitialImage = ((System.Drawing.Image)(resources.GetObject("Image1.InitialImage")));
-            this.Image1.Location = new System.Drawing.Point(22, 12);
+            this.Image1.Location = new System.Drawing.Point(12, 12);
             this.Image1.Name = "Image1";
             this.Image1.Size = new System.Drawing.Size(138, 118);
             this.Image1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -247,19 +248,53 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.BackColor = System.Drawing.Color.LightCoral;
-            this.btnSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveChanges.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            this.btnSaveChanges.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveChanges.Image = null;
-            this.btnSaveChanges.Location = new System.Drawing.Point(524, 569);
+            this.btnSaveChanges.Alpha = 20;
+            this.btnSaveChanges.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveChanges.Background = true;
+            this.btnSaveChanges.Background_WidthPen = 4F;
+            this.btnSaveChanges.BackgroundPen = true;
+            this.btnSaveChanges.ColorBackground = System.Drawing.Color.Maroon;
+            this.btnSaveChanges.ColorBackground_1 = System.Drawing.Color.Red;
+            this.btnSaveChanges.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSaveChanges.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSaveChanges.ColorLighting = System.Drawing.Color.Red;
+            this.btnSaveChanges.ColorPen_1 = System.Drawing.Color.RosyBrown;
+            this.btnSaveChanges.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSaveChanges.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnSaveChanges.Effect_1 = true;
+            this.btnSaveChanges.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSaveChanges.Effect_1_Transparency = 25;
+            this.btnSaveChanges.Effect_2 = true;
+            this.btnSaveChanges.Effect_2_ColorBackground = System.Drawing.Color.Salmon;
+            this.btnSaveChanges.Effect_2_Transparency = 20;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnSaveChanges.Lighting = false;
+            this.btnSaveChanges.LinearGradient_Background = false;
+            this.btnSaveChanges.LinearGradientPen = false;
+            this.btnSaveChanges.Location = new System.Drawing.Point(24, 624);
             this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.NoRounding = false;
-            this.btnSaveChanges.Size = new System.Drawing.Size(190, 37);
-            this.btnSaveChanges.TabIndex = 16;
-            this.btnSaveChanges.Text = "Save";
-            this.btnSaveChanges.Transparent = false;
-            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
+            this.btnSaveChanges.PenWidth = 15;
+            this.btnSaveChanges.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSaveChanges.Rounding = true;
+            this.btnSaveChanges.RoundingInt = 70;
+            this.btnSaveChanges.Size = new System.Drawing.Size(160, 43);
+            this.btnSaveChanges.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.btnSaveChanges.TabIndex = 17;
+            this.btnSaveChanges.Tag = "Cyber";
+            this.btnSaveChanges.TextButton = "Save";
+            this.btnSaveChanges.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnSaveChanges.Timer_Effect_1 = 5;
+            this.btnSaveChanges.Timer_RGB = 4;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.ColorBottom = System.Drawing.Color.Maroon;
+            this.gradientPanel1.ColorTop = System.Drawing.Color.IndianRed;
+            this.gradientPanel1.Location = new System.Drawing.Point(344, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(402, 678);
+            this.gradientPanel1.TabIndex = 18;
             // 
             // formProfile
             // 
@@ -268,20 +303,21 @@
             this.BackColor = System.Drawing.Color.Snow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(744, 669);
+            this.Controls.Add(this.Image1);
+            this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.txtBio);
             this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.aloneTextBox5);
+            this.Controls.Add(this.Joined);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.aloneTextBox4);
+            this.Controls.Add(this.DOB);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.aloneTextBox3);
+            this.Controls.Add(this.Gender);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.aloneTextBox2);
+            this.Controls.Add(this.LastName);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.aloneTextBox1);
+            this.Controls.Add(this.FirstName);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.Image1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formProfile";
             this.Text = "Profile";
@@ -293,17 +329,18 @@
         #endregion
         private CircularPictureBox Image1;
         private ReaLTaiizor.Controls.MetroLabel txtName;
-        private ReaLTaiizor.Controls.AloneTextBox aloneTextBox1;
-        private ReaLTaiizor.Controls.AloneTextBox aloneTextBox2;
+        private ReaLTaiizor.Controls.AloneTextBox FirstName;
+        private ReaLTaiizor.Controls.AloneTextBox LastName;
         private ReaLTaiizor.Controls.MetroLabel metroLabel1;
-        private ReaLTaiizor.Controls.AloneTextBox aloneTextBox3;
+        private ReaLTaiizor.Controls.AloneTextBox Gender;
         private ReaLTaiizor.Controls.MetroLabel metroLabel2;
-        private ReaLTaiizor.Controls.AloneTextBox aloneTextBox4;
+        private ReaLTaiizor.Controls.AloneTextBox DOB;
         private ReaLTaiizor.Controls.MetroLabel metroLabel3;
-        private ReaLTaiizor.Controls.AloneTextBox aloneTextBox5;
+        private ReaLTaiizor.Controls.AloneTextBox Joined;
         private ReaLTaiizor.Controls.MetroLabel metroLabel4;
         private ReaLTaiizor.Controls.AloneTextBox txtBio;
         private ReaLTaiizor.Controls.MetroLabel metroLabel5;
-        private ReaLTaiizor.Controls.AirButton btnSaveChanges;
+        private ReaLTaiizor.Controls.CyberButton btnSaveChanges;
+        private GradientPanel gradientPanel1;
     }
 }

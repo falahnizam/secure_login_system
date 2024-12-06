@@ -67,7 +67,7 @@ namespace login
             }
 
             // Now pass these values into the CreateAccount method
-            bool accountCreated = accountService.CreateAccount(username, password, firstName, lastName, dob, gender, "", ""); // Pass gender
+            bool accountCreated = accountService.CreateAccount(username, password, firstName, lastName, dob, gender); // Pass gender
 
             if (accountCreated)
             {

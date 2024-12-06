@@ -35,41 +35,41 @@
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnDashboard = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pnProfile = new System.Windows.Forms.Panel();
-            this.btnProfile = new System.Windows.Forms.Button();
-            this.pnMembership = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pnDigitalContent = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.EventContainer = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.EventsMenu = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.pnChat = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pnLogout = new System.Windows.Forms.Panel();
-            this.btnDashBoard = new System.Windows.Forms.Button();
             this.eventTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.sidebar = new login.GradientPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnDashboard = new login.CustomButton();
+            this.EventContainers = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.EventsMenu = new login.CustomButton();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.customButton8 = new login.CustomButton();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.customButton7 = new login.CustomButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnChat = new login.CustomButton();
+            this.pnMembership = new System.Windows.Forms.Panel();
+            this.customButton2 = new login.CustomButton();
+            this.pnLogout = new System.Windows.Forms.Panel();
+            this.customButton6 = new login.CustomButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnDigitalContent = new login.CustomButton();
+            this.pnProfile = new System.Windows.Forms.Panel();
+            this.btnProfile = new login.CustomButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sidebar.SuspendLayout();
-            this.pnDashboard.SuspendLayout();
-            this.pnProfile.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.EventContainers.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.pnMembership.SuspendLayout();
-            this.pnDigitalContent.SuspendLayout();
-            this.EventContainer.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.pnChat.SuspendLayout();
             this.pnLogout.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pnProfile.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -130,246 +130,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "DashBoard";
             // 
-            // sidebar
-            // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.sidebar.Controls.Add(this.pnDashboard);
-            this.sidebar.Controls.Add(this.pnProfile);
-            this.sidebar.Controls.Add(this.pnMembership);
-            this.sidebar.Controls.Add(this.pnDigitalContent);
-            this.sidebar.Controls.Add(this.EventContainer);
-            this.sidebar.Controls.Add(this.pnChat);
-            this.sidebar.Controls.Add(this.pnLogout);
-            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.sidebar.ForeColor = System.Drawing.Color.Black;
-            this.sidebar.Location = new System.Drawing.Point(0, 39);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(245, 673);
-            this.sidebar.TabIndex = 2;
-            // 
-            // pnDashboard
-            // 
-            this.pnDashboard.Controls.Add(this.button1);
-            this.pnDashboard.Location = new System.Drawing.Point(3, 3);
-            this.pnDashboard.Name = "pnDashboard";
-            this.pnDashboard.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.pnDashboard.Size = new System.Drawing.Size(246, 75);
-            this.pnDashboard.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-11, -5);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(297, 106);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "🟰   DashBoard";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pnProfile
-            // 
-            this.pnProfile.Controls.Add(this.btnProfile);
-            this.pnProfile.Location = new System.Drawing.Point(3, 84);
-            this.pnProfile.Name = "pnProfile";
-            this.pnProfile.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.pnProfile.Size = new System.Drawing.Size(246, 75);
-            this.pnProfile.TabIndex = 10;
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.Location = new System.Drawing.Point(-21, -16);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnProfile.Size = new System.Drawing.Size(297, 106);
-            this.btnProfile.TabIndex = 1;
-            this.btnProfile.Text = "  🙍‍♂️   Profile";
-            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.UseVisualStyleBackColor = false;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
-            // pnMembership
-            // 
-            this.pnMembership.Controls.Add(this.button3);
-            this.pnMembership.Location = new System.Drawing.Point(3, 165);
-            this.pnMembership.Name = "pnMembership";
-            this.pnMembership.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.pnMembership.Size = new System.Drawing.Size(246, 75);
-            this.pnMembership.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(-19, -14);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(297, 106);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "  🫂   Membership";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // pnDigitalContent
-            // 
-            this.pnDigitalContent.Controls.Add(this.button5);
-            this.pnDigitalContent.Location = new System.Drawing.Point(3, 246);
-            this.pnDigitalContent.Name = "pnDigitalContent";
-            this.pnDigitalContent.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.pnDigitalContent.Size = new System.Drawing.Size(246, 75);
-            this.pnDigitalContent.TabIndex = 8;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(-11, -10);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(297, 106);
-            this.button5.TabIndex = 1;
-            this.button5.Text = " ✨   Digital Content";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // EventContainer
-            // 
-            this.EventContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.EventContainer.Controls.Add(this.panel10);
-            this.EventContainer.Controls.Add(this.panel13);
-            this.EventContainer.Controls.Add(this.panel12);
-            this.EventContainer.Location = new System.Drawing.Point(3, 327);
-            this.EventContainer.Name = "EventContainer";
-            this.EventContainer.Size = new System.Drawing.Size(246, 75);
-            this.EventContainer.TabIndex = 10;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.EventsMenu);
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.panel10.Size = new System.Drawing.Size(246, 75);
-            this.panel10.TabIndex = 9;
-            // 
-            // EventsMenu
-            // 
-            this.EventsMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.EventsMenu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventsMenu.ForeColor = System.Drawing.Color.White;
-            this.EventsMenu.Location = new System.Drawing.Point(-27, -15);
-            this.EventsMenu.Name = "EventsMenu";
-            this.EventsMenu.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.EventsMenu.Size = new System.Drawing.Size(297, 106);
-            this.EventsMenu.TabIndex = 1;
-            this.EventsMenu.Text = "    🎆   Events Menu";
-            this.EventsMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EventsMenu.UseVisualStyleBackColor = false;
-            this.EventsMenu.Click += new System.EventHandler(this.EventsMenu_Click_1);
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.button11);
-            this.panel13.Location = new System.Drawing.Point(0, 136);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(246, 75);
-            this.panel13.TabIndex = 10;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(-19, -30);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(297, 112);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "    Events";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.button10);
-            this.panel12.Location = new System.Drawing.Point(3, 76);
-            this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.panel12.Size = new System.Drawing.Size(246, 76);
-            this.panel12.TabIndex = 10;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(-17, -23);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(281, 113);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "     Bookings";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // pnChat
-            // 
-            this.pnChat.Controls.Add(this.button6);
-            this.pnChat.Location = new System.Drawing.Point(3, 408);
-            this.pnChat.Name = "pnChat";
-            this.pnChat.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.pnChat.Size = new System.Drawing.Size(246, 75);
-            this.pnChat.TabIndex = 9;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(-11, -21);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(297, 106);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "  🗨️   Chat";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // pnLogout
-            // 
-            this.pnLogout.Controls.Add(this.btnDashBoard);
-            this.pnLogout.Location = new System.Drawing.Point(3, 489);
-            this.pnLogout.Name = "pnLogout";
-            this.pnLogout.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.pnLogout.Size = new System.Drawing.Size(246, 75);
-            this.pnLogout.TabIndex = 10;
-            // 
-            // btnDashBoard
-            // 
-            this.btnDashBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnDashBoard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashBoard.ForeColor = System.Drawing.Color.White;
-            this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDashBoard.Location = new System.Drawing.Point(-11, -23);
-            this.btnDashBoard.Name = "btnDashBoard";
-            this.btnDashBoard.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnDashBoard.Size = new System.Drawing.Size(297, 106);
-            this.btnDashBoard.TabIndex = 1;
-            this.btnDashBoard.Text = " 👋   Logout";
-            this.btnDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashBoard.UseVisualStyleBackColor = false;
-            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
-            // 
             // eventTransition
             // 
             this.eventTransition.Interval = 10;
@@ -380,32 +140,287 @@
             this.sidebarTransition.Interval = 10;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
+            // sidebar
+            // 
+            this.sidebar.ColorBottom = System.Drawing.Color.Maroon;
+            this.sidebar.ColorTop = System.Drawing.Color.IndianRed;
+            this.sidebar.Controls.Add(this.panel2);
+            this.sidebar.Controls.Add(this.panel5);
+            this.sidebar.Controls.Add(this.EventContainers);
+            this.sidebar.Controls.Add(this.panel7);
+            this.sidebar.Controls.Add(this.pnMembership);
+            this.sidebar.Controls.Add(this.pnProfile);
+            this.sidebar.Controls.Add(this.pnLogout);
+            this.sidebar.Location = new System.Drawing.Point(2, 41);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(294, 703);
+            this.sidebar.TabIndex = 20;
+            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pnDashboard);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(291, 68);
+            this.panel2.TabIndex = 14;
+            // 
+            // pnDashboard
+            // 
+            this.pnDashboard.Angle = 8F;
+            this.pnDashboard.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnDashboard.BorderRadius = 20;
+            this.pnDashboard.ButtonText = "DashBoard";
+            this.pnDashboard.Color0 = System.Drawing.Color.Maroon;
+            this.pnDashboard.Color1 = System.Drawing.Color.IndianRed;
+            this.pnDashboard.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.pnDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("pnDashboard.Icon")));
+            this.pnDashboard.Location = new System.Drawing.Point(0, -12);
+            this.pnDashboard.Name = "pnDashboard";
+            this.pnDashboard.Size = new System.Drawing.Size(351, 91);
+            this.pnDashboard.TabIndex = 16;
+            // 
+            // EventContainers
+            // 
+            this.EventContainers.Controls.Add(this.panel6);
+            this.EventContainers.Controls.Add(this.panel11);
+            this.EventContainers.Controls.Add(this.panel9);
+            this.EventContainers.Location = new System.Drawing.Point(3, 151);
+            this.EventContainers.Name = "EventContainers";
+            this.EventContainers.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.EventContainers.Size = new System.Drawing.Size(291, 68);
+            this.EventContainers.TabIndex = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.EventsMenu);
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel6.Size = new System.Drawing.Size(291, 68);
+            this.panel6.TabIndex = 15;
+            // 
+            // EventsMenu
+            // 
+            this.EventsMenu.Angle = 10F;
+            this.EventsMenu.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.EventsMenu.BorderRadius = 20;
+            this.EventsMenu.ButtonText = "Events Menu";
+            this.EventsMenu.Color0 = System.Drawing.Color.Maroon;
+            this.EventsMenu.Color1 = System.Drawing.Color.IndianRed;
+            this.EventsMenu.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.EventsMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.EventsMenu.Icon = ((System.Drawing.Image)(resources.GetObject("EventsMenu.Icon")));
+            this.EventsMenu.Location = new System.Drawing.Point(0, -16);
+            this.EventsMenu.Name = "EventsMenu";
+            this.EventsMenu.Size = new System.Drawing.Size(351, 91);
+            this.EventsMenu.TabIndex = 19;
+            this.EventsMenu.Click += new System.EventHandler(this.EventsMenu_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.customButton8);
+            this.panel11.Location = new System.Drawing.Point(0, 134);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel11.Size = new System.Drawing.Size(291, 68);
+            this.panel11.TabIndex = 18;
+            // 
+            // customButton8
+            // 
+            this.customButton8.Angle = 23F;
+            this.customButton8.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.customButton8.BorderRadius = 20;
+            this.customButton8.ButtonText = "Event";
+            this.customButton8.Color0 = System.Drawing.Color.Salmon;
+            this.customButton8.Color1 = System.Drawing.Color.Maroon;
+            this.customButton8.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.customButton8.Icon = ((System.Drawing.Image)(resources.GetObject("customButton8.Icon")));
+            this.customButton8.Location = new System.Drawing.Point(0, -16);
+            this.customButton8.Name = "customButton8";
+            this.customButton8.Size = new System.Drawing.Size(351, 91);
+            this.customButton8.TabIndex = 19;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.customButton7);
+            this.panel9.Location = new System.Drawing.Point(0, 68);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel9.Size = new System.Drawing.Size(291, 68);
+            this.panel9.TabIndex = 17;
+            // 
+            // customButton7
+            // 
+            this.customButton7.Angle = 302F;
+            this.customButton7.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.customButton7.BorderRadius = 20;
+            this.customButton7.ButtonText = "Bookings";
+            this.customButton7.Color0 = System.Drawing.Color.Salmon;
+            this.customButton7.Color1 = System.Drawing.Color.Maroon;
+            this.customButton7.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.customButton7.Icon = ((System.Drawing.Image)(resources.GetObject("customButton7.Icon")));
+            this.customButton7.Location = new System.Drawing.Point(0, -12);
+            this.customButton7.Name = "customButton7";
+            this.customButton7.Size = new System.Drawing.Size(351, 91);
+            this.customButton7.TabIndex = 19;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.pnChat);
+            this.panel7.Location = new System.Drawing.Point(3, 225);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel7.Size = new System.Drawing.Size(291, 68);
+            this.panel7.TabIndex = 15;
+            // 
+            // pnChat
+            // 
+            this.pnChat.Angle = 32F;
+            this.pnChat.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnChat.BorderRadius = 20;
+            this.pnChat.ButtonText = "Chat";
+            this.pnChat.Color0 = System.Drawing.Color.Maroon;
+            this.pnChat.Color1 = System.Drawing.Color.IndianRed;
+            this.pnChat.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.pnChat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnChat.Icon = ((System.Drawing.Image)(resources.GetObject("pnChat.Icon")));
+            this.pnChat.Location = new System.Drawing.Point(0, -7);
+            this.pnChat.Name = "pnChat";
+            this.pnChat.Size = new System.Drawing.Size(351, 91);
+            this.pnChat.TabIndex = 19;
+            // 
+            // pnMembership
+            // 
+            this.pnMembership.Controls.Add(this.customButton2);
+            this.pnMembership.Location = new System.Drawing.Point(3, 299);
+            this.pnMembership.Name = "pnMembership";
+            this.pnMembership.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.pnMembership.Size = new System.Drawing.Size(291, 68);
+            this.pnMembership.TabIndex = 15;
+            // 
+            // customButton2
+            // 
+            this.customButton2.Angle = 27F;
+            this.customButton2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.customButton2.BorderRadius = 20;
+            this.customButton2.ButtonText = "Membership";
+            this.customButton2.Color0 = System.Drawing.Color.Maroon;
+            this.customButton2.Color1 = System.Drawing.Color.IndianRed;
+            this.customButton2.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.customButton2.Icon = ((System.Drawing.Image)(resources.GetObject("customButton2.Icon")));
+            this.customButton2.Location = new System.Drawing.Point(0, -9);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(351, 91);
+            this.customButton2.TabIndex = 18;
+            // 
+            // pnLogout
+            // 
+            this.pnLogout.Controls.Add(this.customButton6);
+            this.pnLogout.Location = new System.Drawing.Point(3, 447);
+            this.pnLogout.Name = "pnLogout";
+            this.pnLogout.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.pnLogout.Size = new System.Drawing.Size(291, 68);
+            this.pnLogout.TabIndex = 15;
+            // 
+            // customButton6
+            // 
+            this.customButton6.Angle = 214F;
+            this.customButton6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.customButton6.BorderRadius = 20;
+            this.customButton6.ButtonText = "Logout";
+            this.customButton6.Color0 = System.Drawing.Color.Maroon;
+            this.customButton6.Color1 = System.Drawing.Color.IndianRed;
+            this.customButton6.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.customButton6.Icon = ((System.Drawing.Image)(resources.GetObject("customButton6.Icon")));
+            this.customButton6.Location = new System.Drawing.Point(0, -11);
+            this.customButton6.Name = "customButton6";
+            this.customButton6.Size = new System.Drawing.Size(351, 91);
+            this.customButton6.TabIndex = 19;
+            this.customButton6.Click += new System.EventHandler(this.customButton6_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pnDigitalContent);
+            this.panel5.Location = new System.Drawing.Point(3, 77);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel5.Size = new System.Drawing.Size(291, 68);
+            this.panel5.TabIndex = 15;
+            // 
+            // pnDigitalContent
+            // 
+            this.pnDigitalContent.Angle = 6F;
+            this.pnDigitalContent.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnDigitalContent.BorderRadius = 20;
+            this.pnDigitalContent.ButtonText = "DigitalContent";
+            this.pnDigitalContent.Color0 = System.Drawing.Color.Maroon;
+            this.pnDigitalContent.Color1 = System.Drawing.Color.IndianRed;
+            this.pnDigitalContent.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.pnDigitalContent.ForeColor = System.Drawing.Color.SeaShell;
+            this.pnDigitalContent.Icon = ((System.Drawing.Image)(resources.GetObject("pnDigitalContent.Icon")));
+            this.pnDigitalContent.Location = new System.Drawing.Point(0, -14);
+            this.pnDigitalContent.Name = "pnDigitalContent";
+            this.pnDigitalContent.Size = new System.Drawing.Size(351, 91);
+            this.pnDigitalContent.TabIndex = 19;
+            // 
+            // pnProfile
+            // 
+            this.pnProfile.Controls.Add(this.btnProfile);
+            this.pnProfile.Location = new System.Drawing.Point(3, 373);
+            this.pnProfile.Name = "pnProfile";
+            this.pnProfile.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.pnProfile.Size = new System.Drawing.Size(291, 68);
+            this.pnProfile.TabIndex = 15;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Angle = 179F;
+            this.btnProfile.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnProfile.BorderRadius = 20;
+            this.btnProfile.ButtonText = "Profile";
+            this.btnProfile.Color0 = System.Drawing.Color.Maroon;
+            this.btnProfile.Color1 = System.Drawing.Color.IndianRed;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.btnProfile.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnProfile.Icon = ((System.Drawing.Image)(resources.GetObject("btnProfile.Icon")));
+            this.btnProfile.Location = new System.Drawing.Point(0, -8);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(351, 91);
+            this.btnProfile.TabIndex = 17;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click_1);
+            // 
             // DashboardUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 712);
+            this.ClientSize = new System.Drawing.Size(1253, 721);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "DashboardUser";
-            this.Text = "\\";
-            this.Load += new System.EventHandler(this.DashboardUser_Load);
+            this.Text = "EventContainerEventContainerEventContainer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sidebar.ResumeLayout(false);
-            this.pnDashboard.ResumeLayout(false);
-            this.pnProfile.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.EventContainers.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.pnMembership.ResumeLayout(false);
-            this.pnDigitalContent.ResumeLayout(false);
-            this.EventContainer.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.pnChat.ResumeLayout(false);
             this.pnLogout.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.pnProfile.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -416,28 +431,28 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnHam;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.FlowLayoutPanel sidebar;
-        private System.Windows.Forms.Panel pnDashboard;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel pnMembership;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel pnDigitalContent;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel pnChat;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel pnLogout;
-        private System.Windows.Forms.Button btnDashBoard;
-        private System.Windows.Forms.Panel pnProfile;
-        private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button EventsMenu;
         private System.Windows.Forms.Timer eventTransition;
         private System.Windows.Forms.Timer sidebarTransition;
-        private System.Windows.Forms.Panel EventContainer;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button10;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnProfile;
+        private System.Windows.Forms.Panel pnMembership;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnLogout;
+        private CustomButton pnDashboard;
+        private CustomButton btnProfile;
+        private CustomButton customButton2;
+        private CustomButton pnDigitalContent;
+        private CustomButton EventsMenu;
+        private CustomButton pnChat;
+        private System.Windows.Forms.Panel panel9;
+        private CustomButton customButton7;
+        private System.Windows.Forms.Panel panel11;
+        private CustomButton customButton8;
+        private GradientPanel sidebar;
+        private System.Windows.Forms.Panel EventContainers;
+        private CustomButton customButton6;
     }
 }

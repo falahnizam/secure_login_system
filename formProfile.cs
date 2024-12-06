@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace login
 {
@@ -21,45 +22,96 @@ namespace login
         {
 
             InitializeComponent();
-            this.userId = userId;  // Initialize user ID from the logged-in session
+            this.userId = userId;
+            db = DBconnection.getInstanceOfDBconnection();
+            // Initialize user ID from the logged-in session
             LoadProfileDetails();  // Load the user profile when the form loads
 
-            db = DBconnection.getInstanceOfDBconnection();
+            
         }
+
 
 
         private void LoadProfileDetails()
         {
-            string query = "SELECT FirstName, LastName, DOB, Bio, ProfileImagePath FROM UserDetails WHERE UserID = @UserID";
+
+            // SQL query to fetch user details based on userId
+            string query = "SELECT FirstName, LastName, DOB, Bio, ProfileImagePath, Gender, CreatedAt  FROM UserDetails WHERE UserID = @UserID";
 
             SqlParameter[] parameters = {
-            new SqlParameter("@UserID", userId)
-        };
+        new SqlParameter("@UserID", userId)  // Ensure userId is being passed correctly
+    };
 
-            DataSet profileData = db.ExecuteQuery(query, parameters);
+            DataSet profileData = db.ExecuteQuery(query, parameters);  // Execute the query and get the result
 
-            if (profileData.Tables[0].Rows.Count > 0)
+            // Check if the query returned any data
+            if (profileData != null && profileData.Tables.Count > 0 && profileData.Tables[0].Rows.Count > 0)
             {
-                var row = profileData.Tables[0].Rows[0];
+                var row = profileData.Tables[0].Rows[0];  // Get the first row of the first table
 
-                // Assuming aloneTextBox1 is for FirstName
-                aloneTextBox1.Text = row["FirstName"].ToString();
-                aloneTextBox2.Text = row["LastName"].ToString();
+                // Populate the UI controls with data from the query
+                FirstName.Text = row["FirstName"].ToString();
+                LastName.Text = row["LastName"].ToString();
 
-                // Fill the DOB (date of birth) field
-                DateTime dob = Convert.ToDateTime(row["DOB"]);
-                aloneTextBox4.Text = dob.ToString("yyyy-MM-dd");
+                DateTime dob;
+                if (DateTime.TryParse(row["DOB"].ToString(), out dob))
+                {
+                    DOB.Text = dob.ToString("yyyy-MM-dd");
+                    DOB.ReadOnly = true;
+                }
+                else
+                {
+                    DOB.Text = string.Empty;
+                }
 
                 txtBio.Text = row["Bio"].ToString();
 
-                // Load the profile image if a path exists
-                string imageLocation = row["ProfileImagePath"].ToString();
+                string gender = row["Gender"].ToString();
+                Gender.Text = gender;
+                Gender.ReadOnly = true;
+
+                DateTime createdAt;
+                if (DateTime.TryParse(row["CreatedAt"].ToString(), out createdAt))
+                {
+                    Joined.Text = createdAt.ToString("yyyy-MM-dd");  // Assuming txtJoined is the TextBox to show the joined date
+                }
+                else
+                {
+                    Joined.Text = string.Empty;
+                }
+
+                // Safely handle ProfileImagePath
+                string imageLocation = row["ProfileImagePath"] != DBNull.Value ? row["ProfileImagePath"].ToString() : string.Empty;
+
                 if (!string.IsNullOrEmpty(imageLocation))
                 {
-                    Image1.ImageLocation = imageLocation;
+                    // Retrieve the image from Local AppData
+                    string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyApp", "ProfileImages");
+                    string imageFilePath = Path.Combine(appDataPath, imageLocation);  // Assuming 'imageLocation' stores the filename
+
+                    if (File.Exists(imageFilePath))
+                    {
+                        Image1.ImageLocation = imageFilePath;  // Display the image
+                    }
+                    else
+                    {
+                        Image1.Image = null;  // Handle case where no image is available
+                    }
+                }
+                else
+                {
+                    Image1.Image = null;  // Handle case where no image path is stored
                 }
             }
+            else
+            {
+                // Handle the case when no data is returned
+                MessageBox.Show("No profile data found for this user.");
+            }
         }
+
+
+
 
         private void Image1_Click(object sender, EventArgs e)
         {
@@ -74,8 +126,30 @@ namespace login
 
                     if (!string.IsNullOrEmpty(imageLocation))
                     {
-                        // Set the selected image to the PictureBox
-                        Image1.ImageLocation = imageLocation;
+                        // Set AppData folder path (LocalApplicationData)
+                        string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyApp", "ProfileImages");
+
+                        // Ensure the directory exists
+                        if (!Directory.Exists(appDataPath))
+                        {
+                            Directory.CreateDirectory(appDataPath);
+                        }
+
+                        // Generate a unique filename using userId (or a hash if needed)
+                        string imageFileName = $"{userId}_{Guid.NewGuid()}.jpg";  // Unique filename (using GUID)
+                        string newImagePath = Path.Combine(appDataPath, imageFileName);
+
+                        // Log the path for debugging
+                        MessageBox.Show("Saving image to: " + newImagePath);  // Debugging step
+
+                        // Save the image to the AppData folder
+                        File.Copy(imageLocation, newImagePath, true);  // true allows overwriting if the file already exists
+
+                        // Set the image to PictureBox (Image1)
+                        Image1.ImageLocation = newImagePath;
+
+                        // Optionally store the image path in the database (if needed)
+                        // Save the new image path to your database if necessary
                     }
                 }
                 else
@@ -91,11 +165,11 @@ namespace login
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            string firstName = aloneTextBox1.Text; // FirstName TextBox
-            string lastName = aloneTextBox2.Text;  // LastName TextBox
+            string firstName = FirstName.Text; // FirstName TextBox
+            string lastName = LastName.Text;  // LastName TextBox
 
             DateTime dob;
-            if (!DateTime.TryParse(aloneTextBox4.Text, out dob))
+            if (!DateTime.TryParse(DOB.Text, out dob))
             {
                 MessageBox.Show("Please enter a valid date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -138,6 +212,8 @@ namespace login
                 MessageBox.Show("Failed to update profile.");
             }
         }
+
+        
     }
 
 }

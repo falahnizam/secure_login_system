@@ -160,18 +160,16 @@
     <Compile Include="formRegistration.Designer.cs">
       <DependentUpon>formRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoginDataSet.cs">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="LoginDataSet1.cs">
-      <DependentUpon>LoginDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="LoginDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="mdiProperties.cs" />
     <Compile Include="PasswordHash.cs" />
@@ -183,11 +181,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomButton.Designer.cs">
+      <DependentUpon>CustomButton.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateAc.resx">
       <DependentUpon>CreateAc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomButton.resx">
+      <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardUser.resx">
       <DependentUpon>DashboardUser.cs</DependentUpon>
@@ -224,17 +231,6 @@
     </None>
     <None Include="LoginDataSet.xss">
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LoginDataSet1.xsc">
-      <DependentUpon>LoginDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="LoginDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LoginDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LoginDataSet1.xss">
-      <DependentUpon>LoginDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

@@ -27,60 +27,88 @@ namespace login
         // Method for executing queries that return data 
         public DataSet ExecuteQuery(string sqlQuery, SqlParameter[] parameters = null)
         {
-            DataSet dataSet = new DataSet(); // Create a new DataSet to hold results
+            DataSet dataSet = new DataSet();
 
-            using (SqlConnection conn = new SqlConnection(DBconnectionString)) // Open a connection
+            using (SqlConnection conn = new SqlConnection(DBconnectionString))
             {
                 try
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn)) // Create a SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
                     {
                         if (parameters != null)
-                            cmd.Parameters.AddRange(parameters); // Add parameters if provided
-
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd)) // Create a SqlDataAdapter
                         {
-                            adapter.Fill(dataSet); // Fill the DataSet with the query results
+                            cmd.Parameters.AddRange(parameters);
+                        }
+
+                        // Log the SQL query and parameters for debugging
+                        Console.WriteLine("Executing Query: " + sqlQuery);
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                Console.WriteLine($"Parameter: {param.ParameterName} = {param.Value}");
+                            }
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dataSet);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle or log exception
-                    throw; // Re-throwing for higher-level handling
+                    // Log the exception details
+                    Console.WriteLine($"Error: {ex.Message}");
+                    throw;  // Re-throw the exception for higher-level handling
                 }
             }
 
-            return dataSet; // Return the filled DataSet
+            return dataSet;
         }
+
 
         // Method for executing commands that do not return data (e.g., INSERT, UPDATE, DELETE)
         public int ExecuteNonQuery(string sqlQuery, SqlParameter[] parameters = null)
         {
-            int affectedRows = 0; // Initialize affected rows counter
+            int affectedRows = 0;
 
-            using (SqlConnection conn = new SqlConnection(DBconnectionString)) // Open a connection
+            using (SqlConnection conn = new SqlConnection(DBconnectionString))
             {
                 try
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn)) // Create a SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
                     {
                         if (parameters != null)
-                            cmd.Parameters.AddRange(parameters); // Add parameters if provided
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
 
-                        affectedRows = cmd.ExecuteNonQuery(); // Execute the command
+                        // Log the SQL query and parameters for debugging
+                        Console.WriteLine("Executing NonQuery: " + sqlQuery);
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                Console.WriteLine($"Parameter: {param.ParameterName} = {param.Value}");
+                            }
+                        }
+
+                        affectedRows = cmd.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle or log exception
-                    throw; // Re-throwing for higher-level handling
+                    // Log the exception details
+                    Console.WriteLine($"Error: {ex.Message}");
+                    throw;  // Re-throw the exception for higher-level handling
                 }
             }
 
-            return affectedRows; // Return the number of affected rows
+            return affectedRows;
         }
+
     }
 }
