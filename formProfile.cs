@@ -44,14 +44,12 @@ namespace login
 
                 // Assuming aloneTextBox1 is for FirstName
                 aloneTextBox1.Text = row["FirstName"].ToString();
-                // Assuming aloneTextBox2 is for LastName
                 aloneTextBox2.Text = row["LastName"].ToString();
 
                 // Fill the DOB (date of birth) field
                 DateTime dob = Convert.ToDateTime(row["DOB"]);
                 aloneTextBox4.Text = dob.ToString("yyyy-MM-dd");
 
-                // Fill the Bio
                 txtBio.Text = row["Bio"].ToString();
 
                 // Load the profile image if a path exists

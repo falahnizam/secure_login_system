@@ -25,20 +25,12 @@ namespace login
                 // Define the default RoleID for "Pending" (Assuming RoleID 4 is for "Pending")
                 int pendingRoleID = 4;
 
-                // Validate the gender (optional, depending on your use case)
-                if (string.IsNullOrEmpty(gender) || !new[] { "Male", "Female", "Other" }.Contains(gender))
-                {
-                    // Log an error or handle invalid gender input
-                    Console.WriteLine("Invalid gender value.");
-                    return false; // Exit early if gender is invalid
-                }
 
                 // Define the SQL query for inserting user details (including gender)
                 string userQuery = @"INSERT INTO UserDetails (FirstName, LastName, DOB, Gender, RoleID) 
                              VALUES (@FirstName, @LastName, @DOB, @Gender, @RoleID);
                              SELECT SCOPE_IDENTITY();"; // Get the new UserID
 
-                // Parameters for the user details query, including the gender
                 SqlParameter[] userParams = {
                     new SqlParameter("@FirstName", firstName),
                     new SqlParameter("@LastName", lastName),
@@ -54,14 +46,11 @@ namespace login
                     return false; // Insertion failed, no result
                 }
 
-                // Access the UserID from the first row, first column of the result
                 int userId = Convert.ToInt32(result.Tables[0].Rows[0][0]);
 
-                // Define the SQL query for inserting login credentials
                 string loginQuery = @"INSERT INTO Login (UserName, Password, UserID) 
                               VALUES (@UserName, @Password, @UserID)";
 
-                // Parameters for the login query
                 SqlParameter[] loginParams = {
                     new SqlParameter("@UserName", username),
                     new SqlParameter("@Password", Convert.ToBase64String(passwordHash.ToArray())), // Store the hashed password
