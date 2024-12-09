@@ -410,7 +410,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
-            this.sidebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.EventContainers.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
