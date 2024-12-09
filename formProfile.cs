@@ -213,7 +213,10 @@ namespace login
             }
         }
 
-        
+        private void formProfile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

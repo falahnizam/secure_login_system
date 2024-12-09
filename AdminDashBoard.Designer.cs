@@ -152,7 +152,6 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(291, 682);
             this.sidebar.TabIndex = 1;
-      
             // 
             // pnDashboard
             // 

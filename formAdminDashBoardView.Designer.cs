@@ -1,6 +1,6 @@
 ﻿namespace login
 {
-    partial class formDashBoard
+    partial class formAdminDashBoardView
     {
         /// <summary>
         /// Required designer variable.

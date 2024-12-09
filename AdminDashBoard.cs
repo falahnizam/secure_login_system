@@ -14,7 +14,7 @@ namespace login
     public partial class AdminDashBoard : Form
     {
         // Declare variables for child forms
-        formDashBoard dashboard;
+        formAdminDashBoardView dashboard;
         formRegistration registration;
         PendingUsers pendingUser;
         formLogout logout;
@@ -149,7 +149,7 @@ namespace login
             if (dashboard == null || dashboard.IsDisposed)
             {
                 
-                dashboard = new formDashBoard();  // Create a new instance of the form
+                dashboard = new formAdminDashBoardView();  // Create a new instance of the form
                 dashboard.FormClosed += Dashboard_FormClosed;  // Subscribe to FormClosed event
                 dashboard.MdiParent = this;  // Set the MDI parent
                 dashboard.WindowState = FormWindowState.Maximized;

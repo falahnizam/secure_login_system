@@ -321,6 +321,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formProfile";
             this.Text = "Profile";
+            this.Load += new System.EventHandler(this.formProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Image1)).EndInit();
             this.ResumeLayout(false);
 

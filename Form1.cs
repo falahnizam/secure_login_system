@@ -13,11 +13,12 @@ namespace login
     public partial class pnLogin : Form
     {
         private AccountService accountService;
-        private DashboardUser dashboardUser;
+        private EventMenuContainer dashboardUser;
+
         public pnLogin()
         {
             InitializeComponent();
-            accountService = new AccountService(); 
+            accountService = new AccountService();
         }
 
         private void SignIn_Click_1(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace login
                 else if (result.RoleID == 2) // Regular user role
                 {
                     // Open User Dashboard
-                    DashboardUser userDashboard = new DashboardUser(result.UserID);
+                    EventMenuContainer userDashboard = GetUserDashboard(result);
                     userDashboard.Show();
                     this.Hide(); // Hide the login form
                 }
@@ -69,21 +70,21 @@ namespace login
                 // Authentication failed
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Method to get the User Dashboard
+        private static EventMenuContainer GetUserDashboard(AccountService.UserAuthenticationResult result)
+        {
+            return new EventMenuContainer(result.UserID);
 
         }
 
         private void SignUp_Click_1(object sender, EventArgs e)
         {
-
             CreateAc createAccountForm = new CreateAc();
+            createAccountForm.FormClosed += (s, args) => this.Show();  // Show login form again when CreateAc form is closed
             createAccountForm.Show();
             this.Hide();
-
         }
-
-        
-
-      
     }
-
 }

@@ -123,12 +123,6 @@
     <Compile Include="CreateAc.Designer.cs">
       <DependentUpon>CreateAc.cs</DependentUpon>
     </Compile>
-    <Compile Include="DashboardUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DashboardUser.Designer.cs">
-      <DependentUpon>DashboardUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="DBconnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -136,11 +130,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formDashBoard.cs">
+    <Compile Include="formAdminDashBoardView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formDashBoard.Designer.cs">
-      <DependentUpon>formDashBoard.cs</DependentUpon>
+    <Compile Include="formAdminDashBoardView.Designer.cs">
+      <DependentUpon>formAdminDashBoardView.cs</DependentUpon>
     </Compile>
     <Compile Include="formLogout.cs">
       <SubType>Form</SubType>
@@ -186,6 +180,12 @@
     </Compile>
     <Compile Include="CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDashBoard.Designer.cs">
+      <DependentUpon>DashboardUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>

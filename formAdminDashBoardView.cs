@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace login
 {
-    public partial class formDashBoard : Form
+    public partial class formAdminDashBoardView : Form
     {
-        public formDashBoard()
+        public formAdminDashBoardView()
         {
             InitializeComponent();
         }
