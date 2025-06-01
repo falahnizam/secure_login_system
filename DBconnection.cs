@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Contexts;
+using System.Threading.Tasks;
 
 namespace login
 {
@@ -13,7 +14,8 @@ namespace login
         // Private constructor
         private DBconnection()
         {
-            DBconnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\pinterst\\login\\Login.mdf; Integrated Security = True; Connect Timeout = 30"; // Initialize the connection string
+//          DBconnectionString = Properties.Settings.Default.DBconnectionString
+            DBconnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"C:\\Users\\acer\\Desktop\\2228945 Software\\neww\\login\\login\\Login.mdf\"; Integrated Security = True; Connect Timeout = 30"; // Initialize the connection string
         }
 
         // Method to get the singleton instance of DBconnection
@@ -109,6 +111,23 @@ namespace login
 
             return affectedRows;
         }
+        public object ExecuteScalar(string query, SqlParameter[] parameters)
+        {
+            using (SqlConnection conn = new SqlConnection(DBconnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+
+                    return cmd.ExecuteScalar(); // Returns the first column of the first row in the result set
+                }
+            }
+        }
+      
 
     }
 }

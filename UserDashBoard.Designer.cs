@@ -65,16 +65,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.customButton5 = new login.CustomButton();
             this.EventContainer = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btnEventsMenu = new login.CustomButton();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnEvent = new login.CustomButton();
             this.panel15 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.customButton8 = new login.CustomButton();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnEvent = new login.CustomButton();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnEventsMenu = new login.CustomButton();
+            this.button5 = new System.Windows.Forms.Button();
             this.pnMembership = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.btnMembership = new login.CustomButton();
@@ -98,9 +98,9 @@
             this.pnPorfileUser.SuspendLayout();
             this.pnDashBoardUser.SuspendLayout();
             this.EventContainer.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.pnMembership.SuspendLayout();
             this.panelLogout.SuspendLayout();
             this.sidebar.SuspendLayout();
@@ -175,7 +175,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Angle = 299F;
+            this.btnDashboard.Angle = 53F;
             this.btnDashboard.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDashboard.BorderRadius = 20;
             this.btnDashboard.ButtonText = "Dashboard";
@@ -202,7 +202,7 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.Angle = 291F;
+            this.btnProfile.Angle = 45F;
             this.btnProfile.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnProfile.BorderRadius = 20;
             this.btnProfile.ButtonText = "Profile";
@@ -229,7 +229,7 @@
             // 
             // btnChat
             // 
-            this.btnChat.Angle = 282F;
+            this.btnChat.Angle = 36F;
             this.btnChat.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnChat.BorderRadius = 20;
             this.btnChat.ButtonText = "Chat";
@@ -256,7 +256,7 @@
             // 
             // btnDigitalContent
             // 
-            this.btnDigitalContent.Angle = 237F;
+            this.btnDigitalContent.Angle = 351F;
             this.btnDigitalContent.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDigitalContent.BorderRadius = 20;
             this.btnDigitalContent.ButtonText = "Digital Content";
@@ -283,7 +283,7 @@
             // 
             // btnEvents
             // 
-            this.btnEvents.Angle = 190F;
+            this.btnEvents.Angle = 304F;
             this.btnEvents.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnEvents.BorderRadius = 20;
             this.btnEvents.ButtonText = "Events Menu";
@@ -323,7 +323,7 @@
             // 
             // customButton2
             // 
-            this.customButton2.Angle = 183F;
+            this.customButton2.Angle = 297F;
             this.customButton2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.customButton2.BorderRadius = 20;
             this.customButton2.ButtonText = "Custom Button";
@@ -350,7 +350,7 @@
             // 
             // customButton1
             // 
-            this.customButton1.Angle = 181F;
+            this.customButton1.Angle = 292F;
             this.customButton1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.customButton1.BorderRadius = 20;
             this.customButton1.ButtonText = "Events";
@@ -377,7 +377,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Angle = 284F;
+            this.btnLogout.Angle = 35F;
             this.btnLogout.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnLogout.BorderRadius = 20;
             this.btnLogout.ButtonText = "Logout";
@@ -393,7 +393,7 @@
             // 
             // btnChatUser
             // 
-            this.btnChatUser.Angle = 67F;
+            this.btnChatUser.Angle = 178F;
             this.btnChatUser.BorderRadius = 20;
             this.btnChatUser.ButtonText = "Chat";
             this.btnChatUser.Color0 = System.Drawing.Color.Maroon;
@@ -459,7 +459,7 @@
             // 
             // btnDigitalContentUser
             // 
-            this.btnDigitalContentUser.Angle = 56F;
+            this.btnDigitalContentUser.Angle = 167F;
             this.btnDigitalContentUser.BorderRadius = 20;
             this.btnDigitalContentUser.ButtonText = "Digital Content";
             this.btnDigitalContentUser.Color0 = System.Drawing.Color.Maroon;
@@ -499,7 +499,7 @@
             // 
             // btnProfileUser
             // 
-            this.btnProfileUser.Angle = 310F;
+            this.btnProfileUser.Angle = 61F;
             this.btnProfileUser.BorderRadius = 20;
             this.btnProfileUser.ButtonText = "Profile";
             this.btnProfileUser.Color0 = System.Drawing.Color.Maroon;
@@ -540,7 +540,7 @@
             // 
             // customButton5
             // 
-            this.customButton5.Angle = 267F;
+            this.customButton5.Angle = 18F;
             this.customButton5.BorderRadius = 20;
             this.customButton5.ButtonText = "DashBoard";
             this.customButton5.Color0 = System.Drawing.Color.Maroon;
@@ -564,102 +564,6 @@
             this.EventContainer.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.EventContainer.Size = new System.Drawing.Size(291, 68);
             this.EventContainer.TabIndex = 16;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(-18, -11);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(0, 0);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "👋   Logout";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.button6);
-            this.panel13.Controls.Add(this.btnEventsMenu);
-            this.panel13.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(291, 68);
-            this.panel13.TabIndex = 16;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(-18, -11);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(0, 0);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "👋   Logout";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // btnEventsMenu
-            // 
-            this.btnEventsMenu.Angle = 237F;
-            this.btnEventsMenu.BorderRadius = 20;
-            this.btnEventsMenu.ButtonText = "Events Menu";
-            this.btnEventsMenu.Color0 = System.Drawing.Color.Maroon;
-            this.btnEventsMenu.Color1 = System.Drawing.Color.IndianRed;
-            this.btnEventsMenu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEventsMenu.Icon = ((System.Drawing.Image)(resources.GetObject("btnEventsMenu.Icon")));
-            this.btnEventsMenu.Location = new System.Drawing.Point(-3, -10);
-            this.btnEventsMenu.Name = "btnEventsMenu";
-            this.btnEventsMenu.Size = new System.Drawing.Size(351, 91);
-            this.btnEventsMenu.TabIndex = 3;
-            this.btnEventsMenu.Click += new System.EventHandler(this.btnEventsMenu_Click);
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.button7);
-            this.panel14.Controls.Add(this.btnEvent);
-            this.panel14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel14.Location = new System.Drawing.Point(0, 68);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.panel14.Size = new System.Drawing.Size(291, 68);
-            this.panel14.TabIndex = 16;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button7.Location = new System.Drawing.Point(-18, -11);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(0, 0);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "👋   Logout";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // btnEvent
-            // 
-            this.btnEvent.Angle = 179F;
-            this.btnEvent.BorderRadius = 20;
-            this.btnEvent.ButtonText = "Events";
-            this.btnEvent.Color0 = System.Drawing.Color.Maroon;
-            this.btnEvent.Color1 = System.Drawing.Color.IndianRed;
-            this.btnEvent.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEvent.Icon = ((System.Drawing.Image)(resources.GetObject("btnEvent.Icon")));
-            this.btnEvent.Location = new System.Drawing.Point(0, -7);
-            this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(351, 91);
-            this.btnEvent.TabIndex = 3;
             // 
             // panel15
             // 
@@ -689,7 +593,7 @@
             // 
             // customButton8
             // 
-            this.customButton8.Angle = 114F;
+            this.customButton8.Angle = 228F;
             this.customButton8.BorderRadius = 20;
             this.customButton8.ButtonText = "Booking";
             this.customButton8.Color0 = System.Drawing.Color.Maroon;
@@ -700,6 +604,102 @@
             this.customButton8.Name = "customButton8";
             this.customButton8.Size = new System.Drawing.Size(351, 91);
             this.customButton8.TabIndex = 3;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.button7);
+            this.panel14.Controls.Add(this.btnEvent);
+            this.panel14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel14.Location = new System.Drawing.Point(0, 68);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel14.Size = new System.Drawing.Size(291, 68);
+            this.panel14.TabIndex = 16;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button7.Location = new System.Drawing.Point(-18, -11);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(0, 0);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "👋   Logout";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // btnEvent
+            // 
+            this.btnEvent.Angle = 293F;
+            this.btnEvent.BorderRadius = 20;
+            this.btnEvent.ButtonText = "Events";
+            this.btnEvent.Color0 = System.Drawing.Color.Maroon;
+            this.btnEvent.Color1 = System.Drawing.Color.IndianRed;
+            this.btnEvent.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEvent.Icon = ((System.Drawing.Image)(resources.GetObject("btnEvent.Icon")));
+            this.btnEvent.Location = new System.Drawing.Point(0, -7);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Size = new System.Drawing.Size(351, 91);
+            this.btnEvent.TabIndex = 3;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.button6);
+            this.panel13.Controls.Add(this.btnEventsMenu);
+            this.panel13.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.panel13.Size = new System.Drawing.Size(291, 68);
+            this.panel13.TabIndex = 16;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button6.Location = new System.Drawing.Point(-18, -11);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(0, 0);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "👋   Logout";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // btnEventsMenu
+            // 
+            this.btnEventsMenu.Angle = 350F;
+            this.btnEventsMenu.BorderRadius = 20;
+            this.btnEventsMenu.ButtonText = "Events Menu";
+            this.btnEventsMenu.Color0 = System.Drawing.Color.Maroon;
+            this.btnEventsMenu.Color1 = System.Drawing.Color.IndianRed;
+            this.btnEventsMenu.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEventsMenu.Icon = ((System.Drawing.Image)(resources.GetObject("btnEventsMenu.Icon")));
+            this.btnEventsMenu.Location = new System.Drawing.Point(-3, -10);
+            this.btnEventsMenu.Name = "btnEventsMenu";
+            this.btnEventsMenu.Size = new System.Drawing.Size(351, 91);
+            this.btnEventsMenu.TabIndex = 3;
+            this.btnEventsMenu.Click += new System.EventHandler(this.btnEventsMenu_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button5.Location = new System.Drawing.Point(-18, -11);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(0, 0);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "👋   Logout";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // pnMembership
             // 
@@ -729,7 +729,7 @@
             // 
             // btnMembership
             // 
-            this.btnMembership.Angle = 40F;
+            this.btnMembership.Angle = 154F;
             this.btnMembership.BorderRadius = 20;
             this.btnMembership.ButtonText = "Membership";
             this.btnMembership.Color0 = System.Drawing.Color.Maroon;
@@ -751,8 +751,6 @@
             this.panelLogout.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.panelLogout.Size = new System.Drawing.Size(291, 68);
             this.panelLogout.TabIndex = 16;
-            this.panelLogout.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogout_Paint);
-            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
@@ -770,7 +768,7 @@
             // 
             // ButtonLogout
             // 
-            this.ButtonLogout.Angle = 191F;
+            this.ButtonLogout.Angle = 304F;
             this.ButtonLogout.BorderRadius = 20;
             this.ButtonLogout.ButtonText = "logout";
             this.ButtonLogout.Color0 = System.Drawing.Color.Maroon;
@@ -829,9 +827,9 @@
             this.pnPorfileUser.ResumeLayout(false);
             this.pnDashBoardUser.ResumeLayout(false);
             this.EventContainer.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.pnMembership.ResumeLayout(false);
             this.panelLogout.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);

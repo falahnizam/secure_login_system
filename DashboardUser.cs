@@ -38,19 +38,12 @@ namespace login
         }
         bool registrationExpand = false;
 
-        
-
-        private void panelLogout_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void EventTransition_Tick(object sender, EventArgs e)
         {
             if (registrationExpand == false)
             {
                 EventContainer.Height += 10;
-                if (EventContainer.Height >= 154)
+                if (EventContainer.Height >= 123)
                 {
                     EventTransition.Stop();
                     registrationExpand = true;
@@ -60,7 +53,7 @@ namespace login
             else
             {
                 EventContainer.Height -= 10;
-                if (EventContainer.Height <= 56)
+                if (EventContainer.Height <= 52)
                 {
                     EventTransition.Stop();
                     registrationExpand = false;
@@ -90,7 +83,7 @@ namespace login
             else
             {
                 sidebar.Width += 22; // Increase width to expand
-                if (sidebar.Width >= 254)
+                if (sidebar.Width >= 174)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -119,6 +112,7 @@ namespace login
 
                 profile = new formProfile(userId);  // Create a new instance of the form
                 profile.FormClosed += profile_FormClosed;  // Subscribe to FormClosed event
+                profile.Dock = DockStyle.Fill;
                 profile.MdiParent = this;  // Set the MDI parent
                 profile.WindowState = FormWindowState.Maximized;
                 profile.ControlBox = false;

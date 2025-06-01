@@ -286,6 +286,7 @@
             this.btnSaveChanges.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.btnSaveChanges.Timer_Effect_1 = 5;
             this.btnSaveChanges.Timer_RGB = 4;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click_1);
             // 
             // gradientPanel1
             // 
@@ -321,7 +322,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formProfile";
             this.Text = "Profile";
-            this.Load += new System.EventHandler(this.formProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Image1)).EndInit();
             this.ResumeLayout(false);
 

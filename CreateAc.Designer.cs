@@ -45,6 +45,13 @@
             this.parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
             this.label7 = new System.Windows.Forms.Label();
             this.CBRGender = new System.Windows.Forms.ComboBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.Label();
+            this.lblPasswordStrength = new System.Windows.Forms.Label();
+            this.hidebtn = new System.Windows.Forms.PictureBox();
+            this.unHidebtn = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.hidebtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unHidebtn)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -63,7 +70,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(27, 191);
+            this.label3.Location = new System.Drawing.Point(27, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 28);
             this.label3.TabIndex = 2;
@@ -85,7 +92,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(25, 414);
+            this.label5.Location = new System.Drawing.Point(28, 465);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 28);
             this.label5.TabIndex = 4;
@@ -96,7 +103,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(27, 499);
+            this.label6.Location = new System.Drawing.Point(28, 525);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 28);
             this.label6.TabIndex = 5;
@@ -121,7 +128,7 @@
             // UserName
             // 
             this.UserName.BackColor = System.Drawing.Color.LightGray;
-            this.UserName.Location = new System.Drawing.Point(32, 461);
+            this.UserName.Location = new System.Drawing.Point(30, 496);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(333, 26);
             this.UserName.TabIndex = 10;
@@ -129,17 +136,19 @@
             // Password
             // 
             this.Password.BackColor = System.Drawing.Color.LightGray;
-            this.Password.Location = new System.Drawing.Point(32, 547);
+            this.Password.Location = new System.Drawing.Point(30, 556);
             this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(333, 26);
             this.Password.TabIndex = 11;
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // CreateAccount
             // 
             this.CreateAccount.BackColor = System.Drawing.Color.Maroon;
             this.CreateAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CreateAccount.ForeColor = System.Drawing.Color.White;
-            this.CreateAccount.Location = new System.Drawing.Point(125, 606);
+            this.CreateAccount.Location = new System.Drawing.Point(120, 634);
             this.CreateAccount.Name = "CreateAccount";
             this.CreateAccount.Size = new System.Drawing.Size(171, 50);
             this.CreateAccount.TabIndex = 12;
@@ -195,7 +204,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(27, 357);
+            this.label7.Location = new System.Drawing.Point(25, 343);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 28);
             this.label7.TabIndex = 16;
@@ -204,11 +213,62 @@
             // CBRGender
             // 
             this.CBRGender.FormattingEnabled = true;
-            this.CBRGender.Location = new System.Drawing.Point(32, 388);
+            this.CBRGender.Location = new System.Drawing.Point(30, 374);
             this.CBRGender.Name = "CBRGender";
             this.CBRGender.Size = new System.Drawing.Size(121, 28);
             this.CBRGender.TabIndex = 17;
             this.CBRGender.SelectedIndexChanged += new System.EventHandler(this.CBRGender_SelectedIndexChanged);
+            // 
+            // Email
+            // 
+            this.Email.BackColor = System.Drawing.Color.LightGray;
+            this.Email.Location = new System.Drawing.Point(30, 436);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(333, 26);
+            this.Email.TabIndex = 19;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.AutoSize = true;
+            this.txtEmail.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Maroon;
+            this.txtEmail.Location = new System.Drawing.Point(28, 405);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(59, 28);
+            this.txtEmail.TabIndex = 18;
+            this.txtEmail.Text = "Email";
+            // 
+            // lblPasswordStrength
+            // 
+            this.lblPasswordStrength.AutoSize = true;
+            this.lblPasswordStrength.ForeColor = System.Drawing.Color.Black;
+            this.lblPasswordStrength.Location = new System.Drawing.Point(36, 594);
+            this.lblPasswordStrength.Name = "lblPasswordStrength";
+            this.lblPasswordStrength.Size = new System.Drawing.Size(50, 20);
+            this.lblPasswordStrength.TabIndex = 20;
+            this.lblPasswordStrength.Text = "Week";
+            // 
+            // hidebtn
+            // 
+            this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
+            this.hidebtn.Location = new System.Drawing.Point(360, 548);
+            this.hidebtn.Name = "hidebtn";
+            this.hidebtn.Size = new System.Drawing.Size(35, 34);
+            this.hidebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hidebtn.TabIndex = 22;
+            this.hidebtn.TabStop = false;
+            this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
+            // 
+            // unHidebtn
+            // 
+            this.unHidebtn.Image = ((System.Drawing.Image)(resources.GetObject("unHidebtn.Image")));
+            this.unHidebtn.Location = new System.Drawing.Point(360, 548);
+            this.unHidebtn.Name = "unHidebtn";
+            this.unHidebtn.Size = new System.Drawing.Size(35, 34);
+            this.unHidebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unHidebtn.TabIndex = 21;
+            this.unHidebtn.TabStop = false;
+            this.unHidebtn.Click += new System.EventHandler(this.unHidebtn_Click);
             // 
             // CreateAc
             // 
@@ -216,6 +276,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(444, 696);
+            this.Controls.Add(this.hidebtn);
+            this.Controls.Add(this.unHidebtn);
+            this.Controls.Add(this.lblPasswordStrength);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.CBRGender);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.parrotButton1);
@@ -237,6 +302,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateAc";
             this.Load += new System.EventHandler(this.CreateAc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.hidebtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unHidebtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +327,10 @@
         private ReaLTaiizor.Controls.ParrotButton parrotButton1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CBRGender;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.Label txtEmail;
+        private System.Windows.Forms.Label lblPasswordStrength;
+        private System.Windows.Forms.PictureBox hidebtn;
+        private System.Windows.Forms.PictureBox unHidebtn;
     }
 }

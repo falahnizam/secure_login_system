@@ -79,12 +79,33 @@ namespace login
 
         }
 
-        private void SignUp_Click_1(object sender, EventArgs e)
+        private void SignUp_Click(object sender, EventArgs e)
         {
             CreateAc createAccountForm = new CreateAc();
             createAccountForm.FormClosed += (s, args) => this.Show();  // Show login form again when CreateAc form is closed
             createAccountForm.Show();
             this.Hide();
+        }
+
+        private void hidebtn_Click(object sender, EventArgs e)
+        {
+
+            if (txtPassword.PasswordChar == '*')
+            {
+                unHidebtn.BringToFront();
+                txtPassword.PasswordChar = '\0';
+            }
+
+        }
+
+        private void unHidebtn_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '\0')
+            {
+                hidebtn.BringToFront();
+                txtPassword.PasswordChar = '*';
+            }
+
         }
     }
 }

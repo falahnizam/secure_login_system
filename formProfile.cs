@@ -163,7 +163,8 @@ namespace login
             }
         }
 
-        private void btnSaveChanges_Click(object sender, EventArgs e)
+
+        private void btnSaveChanges_Click_1(object sender, EventArgs e)
         {
             string firstName = FirstName.Text; // FirstName TextBox
             string lastName = LastName.Text;  // LastName TextBox
@@ -211,11 +212,6 @@ namespace login
             {
                 MessageBox.Show("Failed to update profile.");
             }
-        }
-
-        private void formProfile_Load(object sender, EventArgs e)
-        {
-
         }
     }
 

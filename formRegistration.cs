@@ -91,10 +91,7 @@ namespace login
 
         }
 
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
+        
         
     }
 }

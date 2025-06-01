@@ -37,16 +37,20 @@
             this.SignUp = new System.Windows.Forms.Button();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.gradientPanel2 = new login.GradientPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gradientPanel1 = new login.GradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
+            this.hidebtn = new System.Windows.Forms.PictureBox();
+            this.unHidebtn = new System.Windows.Forms.PictureBox();
             this.gradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidebtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unHidebtn)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -62,6 +66,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.txtPassword.Location = new System.Drawing.Point(293, 182);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(301, 34);
             this.txtPassword.TabIndex = 1;
             // 
@@ -91,7 +96,7 @@
             // 
             this.SignIn.BackColor = System.Drawing.Color.Maroon;
             this.SignIn.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignIn.Location = new System.Drawing.Point(321, 246);
+            this.SignIn.Location = new System.Drawing.Point(322, 262);
             this.SignIn.Name = "SignIn";
             this.SignIn.Size = new System.Drawing.Size(103, 39);
             this.SignIn.TabIndex = 0;
@@ -103,13 +108,13 @@
             // 
             this.SignUp.BackColor = System.Drawing.Color.Maroon;
             this.SignUp.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUp.Location = new System.Drawing.Point(443, 246);
+            this.SignUp.Location = new System.Drawing.Point(441, 262);
             this.SignUp.Name = "SignUp";
             this.SignUp.Size = new System.Drawing.Size(103, 39);
             this.SignUp.TabIndex = 5;
             this.SignUp.Text = "Sign Up";
             this.SignUp.UseVisualStyleBackColor = false;
-            this.SignUp.Click += new System.EventHandler(this.SignUp_Click_1);
+            this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
             // 
             // nightControlBox1
             // 
@@ -148,6 +153,16 @@
             this.gradientPanel2.Size = new System.Drawing.Size(180, 375);
             this.gradientPanel2.TabIndex = 6;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(177, 168);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // gradientPanel1
             // 
             this.gradientPanel1.ColorBottom = System.Drawing.Color.Maroon;
@@ -179,16 +194,6 @@
             this.panel1.Size = new System.Drawing.Size(636, 41);
             this.panel1.TabIndex = 7;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(177, 168);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // nightControlBox2
             // 
             this.nightControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,7 +209,7 @@
             this.nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox2.EnableMinimizeButton = true;
             this.nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox2.Location = new System.Drawing.Point(497, 3);
+            this.nightControlBox2.Location = new System.Drawing.Point(497, 0);
             this.nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -213,12 +218,36 @@
             this.nightControlBox2.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox2.TabIndex = 1;
             // 
+            // hidebtn
+            // 
+            this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
+            this.hidebtn.Location = new System.Drawing.Point(589, 182);
+            this.hidebtn.Name = "hidebtn";
+            this.hidebtn.Size = new System.Drawing.Size(35, 34);
+            this.hidebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hidebtn.TabIndex = 11;
+            this.hidebtn.TabStop = false;
+            this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
+            // 
+            // unHidebtn
+            // 
+            this.unHidebtn.Image = ((System.Drawing.Image)(resources.GetObject("unHidebtn.Image")));
+            this.unHidebtn.Location = new System.Drawing.Point(589, 182);
+            this.unHidebtn.Name = "unHidebtn";
+            this.unHidebtn.Size = new System.Drawing.Size(35, 34);
+            this.unHidebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unHidebtn.TabIndex = 10;
+            this.unHidebtn.TabStop = false;
+            this.unHidebtn.Click += new System.EventHandler(this.unHidebtn_Click);
+            // 
             // pnLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(636, 416);
+            this.Controls.Add(this.hidebtn);
+            this.Controls.Add(this.unHidebtn);
             this.Controls.Add(this.gradientPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SignUp);
@@ -236,10 +265,12 @@
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Cornsilk;
             this.gradientPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidebtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unHidebtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,6 +291,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox2;
+        private System.Windows.Forms.PictureBox hidebtn;
+        private System.Windows.Forms.PictureBox unHidebtn;
     }
 }
 

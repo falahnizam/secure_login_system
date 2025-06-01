@@ -65,7 +65,6 @@
             // 
             // bindingSource1
             // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // formRegistration
             // 

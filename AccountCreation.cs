@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace login
 {
@@ -15,7 +17,7 @@ namespace login
         }
 
         // Method to create an account (register user) with "Pending" role
-        public bool CreateAccount(string username, string password, string firstName, string lastName, DateTime dob, string gender)
+        public bool CreateAccount(string username, string password, string firstName, string lastName, DateTime dob, string gender, string email)
         {
             try
             {
@@ -28,8 +30,8 @@ namespace login
 
 
                 // Define the SQL query for inserting user details (including gender)
-                string userQuery = @"INSERT INTO UserDetails (FirstName, LastName, DOB, Gender, RoleID) 
-                             VALUES (@FirstName, @LastName, @DOB, @Gender, @RoleID);
+                string userQuery = @"INSERT INTO UserDetails (FirstName, LastName, DOB, Gender, Email, RoleID) 
+                             VALUES (@FirstName, @LastName, @DOB, @Gender, @Email, @RoleID);
                              SELECT SCOPE_IDENTITY();"; // Get the new UserID
 
                 SqlParameter[] userParams = {
@@ -37,6 +39,7 @@ namespace login
             new SqlParameter("@LastName", lastName),
             new SqlParameter("@DOB", dob),
             new SqlParameter("@Gender", gender),
+            new SqlParameter("@Email", email),
             new SqlParameter("@RoleID", pendingRoleID)
         };
 
@@ -91,10 +94,11 @@ namespace login
             string query = @"SELECT L.Password, UD.RoleID, L.UserID
                      FROM Login L
                      INNER JOIN UserDetails UD ON L.UserID = UD.UserID
-                     WHERE L.UserName = @UserName";
+                     WHERE L.UserName COLLATE Latin1_General_BIN = @UserName";
 
             SqlParameter[] parameters = {
-        new SqlParameter("@UserName", username)
+            new SqlParameter("@UserName", username)
+
     };
 
             // Execute the query
@@ -206,6 +210,27 @@ namespace login
                 Console.WriteLine($"Error rejecting user: {ex.Message}");
                 return false;
             }
+        }
+        public bool CheckEmailExists(string email)
+        {
+            string query = "SELECT COUNT(*) FROM UserDetails WHERE Email = @Email";
+            SqlParameter[] parameters = { new SqlParameter("@Email", email) };
+
+            int emailCount = (int)db.ExecuteScalar(query, parameters);  // Using existing synchronous method
+            return emailCount > 0;
+        }
+
+        public bool CheckUserNameExists(string userName)
+        {
+            string query = "SELECT COUNT(*) FROM LOGIN WHERE UserName = @UserName";
+            // Ensure parameter name is consistent with the query
+            SqlParameter[] parameters = { new SqlParameter("@UserName", userName) };
+
+            // Assuming db is a valid object for executing the query
+            int usernameCount = (int)db.ExecuteScalar(query, parameters);
+
+            // Return true if the username exists (count > 0), false otherwise
+            return usernameCount > 0;
         }
 
 
