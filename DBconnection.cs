@@ -14,8 +14,7 @@ namespace login
         // Private constructor
         private DBconnection()
         {
-            //DBconnectionString = Properties.Settings.Default.DBconnectionString;
-            DBconnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"C:\\Users\\acer\\Desktop\\2228945 Software\\neww\\login\\login\\Login.mdf\"; Integrated Security = True; Connect Timeout = 30"; // Initialize the connection string
+            DBconnectionString = Properties.Settings.Default.DBconnectionString; // Initialize the connection string
         }
 
         // Method to get the singleton instance of DBconnection
