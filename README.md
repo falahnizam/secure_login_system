@@ -173,4 +173,24 @@ To run the compiled application, only the .NET Framework 4.8.1 runtime and SQL S
 Login Screen
 ![Login UI](assets/)
 
+## Known Issues & Testing Summary
+
+The Secure Login System has undergone comprehensive manual testing covering key features such as login, account creation, user dashboards, and admin controls. Security tests, including SQL injection attempts and password strength validations, were performed to ensure robustness.
+
+## Testing Highlights
+- Successful login/logout flows with valid credentials  
+- Role-based access control enforced correctly  
+- Passwords securely hashed and verified using PBKDF2  
+- Prevention of common SQL injection attacks  
+- Validation of user input fields (e.g., email format, password strength)  
+- Smooth navigation between forms and screens  
+
+## Known Issues
+- **Account Lockout Mechanism:** Multiple consecutive failed login attempts do not currently trigger account lockout as intended, posing a potential security risk. Planned fix in future updates.  
+- **UI Resizing:** Some windows (User Dashboard and Admin Dashboard) do not resize properly, causing layout issues on various screen resolutions.  
+- **“Enter” Key Behavior on Create Account:** Pressing the Enter key on the account creation form does not trigger form submission, impacting usability.  
+
+These issues are documented and prioritized for future updates to improve security and user experience.
+
+
 
