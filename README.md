@@ -72,8 +72,8 @@ secure_login_system/
 
 # Setup Instruction
 - **Clone the repository**
-  ```bash ```
-  git clone https://github.com/falahnizam/secure_login_system.git
+  bash 
+  ```git clone https://github.com/falahnizam/secure_login_system.git```
 
 - **Open the project**
   launch login.sln
