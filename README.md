@@ -59,7 +59,7 @@ Installed via NuGet:
 
 ---
 # Folder Structure
-secure_login_system/
+```secure_login_system/
 ├── Controllers/ # Logic and flow control
 ├── Models/ # DB-related operations
 ├── Views/ # WinForms (UI)
@@ -67,7 +67,7 @@ secure_login_system/
 ├── Login.mdf # LocalDB database file
 ├── App.config # Connection strings (excluded from repo)
 └── README.md
-
+```
 ---
 
 # Setup Instruction
