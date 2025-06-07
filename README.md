@@ -111,41 +111,41 @@ secure_login_system/
     The constructor is private to prevent external instantiation.  
     getInstanceOfDBconnection() ensures only one instance exists and is reused throughout the app.  
 
-  - ExecuteQuery():  
+  - ```ExecuteQuery()```:  
     Executes SELECT queries and returns a DataSet.  
     Accepts optional SqlParameter[] to prevent SQL injection.  
     Uses using blocks for automatic connection disposal.
 
-  - ExecuteNonQuery():  
+  - ```ExecuteNonQuery()```:  
     Executes non-query SQL commands like INSERT, UPDATE, and DELETE.  
     Returns the number of affected rows to confirm success.
 
-  - ExecuteScalar():  
+  - ```ExecuteScalar()```:  
     Efficiently retrieves a single value (e.g., SELECT COUNT(*)).  
     Returns the first column of the first row from the result set.
 
 3. **AccountService.cs** (User Management & Authentication)  
    Handles all account-related operations including registration, login, role updates, and status checks.  
-   - **CreateAccount()**  
+   - ```CreateAccount()```  
      Registers a new user with a default `"Pending"` role.  
      Inserts into both `UserDetails` and `Login` tables.  
      Hashes passwords using `PasswordHash`.  
      Returns `true` on successful registration.
 
-   - **AuthenticateUser()**  
+   - ```AuthenticateUser()``` 
      Authenticates user credentials during login.  
      Retrieves hashed password, verifies it, and returns a `UserAuthenticationResult` (includes `RoleID` and `UserID`).
 
-   - **AuthorizeUser() / UpdateUserRole()**  
+   - ```AuthorizeUser()``` / ```UpdateUserRole()```
      Updates a user's role in the database (e.g., approve or promote a user). Used by Admin.
 
-   - **GetPendingUsers()**  
+   - ```GetPendingUsers()```
      Fetches all users with the `"Pending"` role for admin review.
 
-   - **RejectUser()**  
+   - ```RejectUser()``` 
      Marks a user as rejected (sets `RoleID = 3`) and logs the reason in the `RejectedUsers` table.
 
-   - **CheckEmailExists() / CheckUserNameExists()**  
+   - ```CheckEmailExists()``` / ```CheckUserNameExists()```
      Validates uniqueness of email and username during registration using `ExecuteScalar()`.
 
 4. **PasswordHash.cs** (Password Security & Verification)  
@@ -171,10 +171,6 @@ To run the compiled application, only the .NET Framework 4.8.1 runtime and SQL S
 
 ## Work Flow
 Login Screen
+![Login UI](assets/)
 
-![Login UI](assets/screenshot-login-ui.png)
-
-##
-Login Demo
-![UI interaction](assets/login-demo.gif)
 
