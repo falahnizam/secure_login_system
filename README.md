@@ -188,7 +188,6 @@ The Secure Login System has undergone comprehensive manual testing covering key 
 ## Known Issues
 - **Account Lockout Mechanism:** Multiple consecutive failed login attempts do not currently trigger account lockout as intended, posing a potential security risk. Planned fix in future updates.  
 - **UI Resizing:** Some windows (User Dashboard and Admin Dashboard) do not resize properly, causing layout issues on various screen resolutions.  
-- **“Enter” Key Behavior on Create Account:** Pressing the Enter key on the account creation form does not trigger form submission, impacting usability.  
 
 These issues are documented and prioritized for future updates to improve security and user experience.
 
